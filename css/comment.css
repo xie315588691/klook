@@ -1,0 +1,371 @@
+@charset "utf-8";
+/*header*/
+header {
+    width: 100%;
+    height: 64px;
+    padding: 0 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+
+/*header-logo*/
+.header-logo {
+    width: 144px;
+    height: 24px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.header-logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("../images/logo1_1.png") center/cover no-repeat;
+    font-size: 0;
+}
+
+.header-right {
+    width: 687px;
+    height: 64px;
+    /*background-color: skyblue;*/
+}
+
+.header-right > ul {
+    /*width: 100%;*/
+    height: 32px;
+
+}
+
+.header-right > ul > li {
+    box-sizing: border-box;
+    height: 64px;
+    float: left;
+    color: #fff;
+    padding: 16px 20px;
+    line-height: 32px;
+    position: relative;
+}
+
+.header-right li i {
+    font-size: 22px;
+    line-height: 32px;
+    padding-left: 8px;
+    color: #fff;
+}
+
+.header-menu {
+    min-width: 440px;
+}
+
+.header-menu a {
+    color: #fff;
+}
+
+.header-menu em {
+    font-size: 22px;
+    line-height: 32px;
+}
+
+/*header 第一个li*/
+.header-menu li:nth-of-type(1):hover .country-items {
+    display: block;
+}
+
+.country-items {
+    width: 690px;
+    height: 338px;
+    background-color: #fff;
+    position: absolute;
+    top: 64px;
+    left: -300px;
+    box-sizing: border-box;
+    padding: 30px 20px 20px;
+    display: none;
+}
+
+.country-items::before, .head-moneys::before {
+    content: '';
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    position: absolute;
+    top: -7px;
+    transform: rotate(45deg);
+    left: 335px;
+}
+
+.country-items ul {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin: 10px 0 0;
+    border-top: 1px solid #e0e0e0;
+    padding: 23px 0 10px;
+    writing-mode: lr-tb;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.country-items ul li {
+    width: 33.3%;
+    height: 28px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    float: none;
+    writing-mode: lr-tb;
+    line-height: 28px;
+    margin-bottom: 3px;
+    font-size: 12px;
+}
+
+.country-items li a {
+    display: inline-block;
+    color: #333;
+    width: 100%;
+    line-height: 32px;
+}
+
+.country-items li a:hover {
+    background-color: #f5f5f5;
+}
+
+.country-items li i {
+    font-size: 12px;
+    margin-left: 6px;
+}
+
+.country-items li span {
+    margin-left: 5px;
+}
+
+.country-items > span {
+    font-size: 14px;
+    position: absolute;
+    top: 24px;
+    left: 20px;
+    color: #333;
+    padding: 0 20px 0 8px;
+    background-color: #fff;
+}
+
+/*header 第二个li*/
+.header-menu li:nth-of-type(2):hover .head-moneys {
+    display: block;
+}
+
+.head-moneys {
+    width: 740px;
+    height: 475px;
+    background-color: #fff;
+    position: absolute;
+    top: 64px;
+    left: -340px;
+    box-sizing: border-box;
+    padding: 28px 22px 10px;
+    display: none;
+}
+
+.head-moneys::before {
+    position: absolute;
+    top: -7px;
+    left: 380px;
+}
+
+.moneys-t {
+    width: 100%;
+    height: 110px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 27px 0 17px;
+}
+
+.moneys-t a, .moneys-b a {
+    color: #333;
+    font-size: 12px;
+}
+
+.moneys-t > span {
+    font-size: 14px;
+    position: absolute;
+    top: 23px;
+    left: 20px;
+    color: #333;
+    padding: 0 20px 0 8px;
+    background-color: #fff;
+}
+
+.money-items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.money-items li {
+    width: 25%;
+    height: 28px;
+    box-sizing: border-box;
+}
+
+.money-items li a {
+    display: inline-block;
+    width: 130px;
+    height: 100%;
+    line-height: 28px;
+    padding-left: 8px;
+}
+
+.gray {
+    color: #999;
+    margin-right: 8px;
+}
+
+.moneys-b {
+    width: 100%;
+    height: 315px;
+    box-sizing: border-box;
+    padding-top: 27px;
+    position: relative;
+}
+
+.moneys-b .money-items {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.moneys-b .moneys-b-t {
+    width: 157px;
+}
+
+.moneys-b > span {
+    font-size: 14px;
+    position: absolute;
+    top: -16px;
+    left: 0;
+    color: #333;
+    padding: 0 20px 0 8px;
+    background-color: #fff;
+}
+
+/*第5个li*/
+.header-menu li:nth-of-type(5):hover .head-history {
+    display: block;
+}
+
+.header-menu li:nth-of-type(5):hover .history-arrow {
+    display: block;
+}
+
+.header-menu .history-arrow {
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    position: absolute;
+    top: 57px;
+    transform: rotate(45deg);
+    left: 40px;
+    padding: 0;
+    display: none;
+}
+
+.head-history {
+    width: 398px;
+    height: 400px;
+    background-color: #fff;
+    padding: 0 20px;
+    position: absolute;
+    top: 64px;
+    left: -140px;
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    overflow: scroll;
+    display: none;
+}
+
+.head-history ul {
+    width: 100%;
+}
+
+.head-history ul li {
+    height: 137px;
+    width: 352px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 0;
+}
+
+.head-history img {
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-right: 20px;
+}
+
+.head-history li div {
+    float: left;
+    color: #333;
+}
+
+.head-history div h3 {
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 4px;
+}
+
+.head-history div p {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.head-history div p:nth-of-type(1) {
+    margin-bottom: 8px;
+}
+
+.head-history div p:nth-of-type(2) {
+    text-decoration: line-through;
+    color: #888;
+
+}
+
+.head-history div p:nth-of-type(3) {
+    margin: 5px 0 4px;
+    font-weight: 700;
+}
+
+.head-history div i {
+    color: #f5a263;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.head-history div p:nth-of-type(4) {
+    color: #24b985;
+}
+
+.head-history div span {
+    color: #f5a263;
+}
+
+/*公共样式*/
+/*箭头*/
+.chevron {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+}
+
+
