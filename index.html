@@ -12,17 +12,7 @@
     <link rel="stylesheet" href="./css/city.css">
     <link rel="stylesheet" href="./css/foot.css">
     <style>
-        .banner-fixed {
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #fff;
-            color: #000;
-        }
 
-        .banner-fixed .header-menu a {
-            color: #000;
-        }
     </style>
 
 </head>
@@ -31,6 +21,10 @@
 <header>
     <div class="header-logo">
         <a href="/">客路</a>
+    </div>
+    <div class="header-search">
+        <input type="text" placeholder="搜索全球目的地 / 活动">
+        <i class="fa fa-search"></i>
     </div>
     <div class="header-right">
         <ul class="header-menu">
@@ -293,25 +287,7 @@
                 <input type="text" placeholder="输入目的地/景点/活动，开启探索之旅..."/>
                 <button><i class="fa fa-search"></i></button>
             </div>
-            <div class="banner-search-bottom">
-                <a href="#" class="fare-a">
-                    <span class="fa fa-wifi"></span>
-                    WiFi＆SIM卡
-                    <i class="chevron chevron-right"></i>
-                </a>
-                <div class="fare-a">
-                    <span class="fa fa-train"></span>
-                    火车票 & 通票
-                    <i class="chevron chevron-down"></i>
-                    <div class="banner-fare">
-                        <a class="fare-item" href="#">JR 列车周游券</a>
-                        <a class="fare-item" href="#">欧洲火车票</a>
-                        <a class="fare-item" href="#">台湾火车票</a>
-                        <a class="fare-item" href="#">内地火车票</a>
-                    </div>
-                </div>
 
-            </div>
         </div>
     </div>
 </div>
@@ -390,6 +366,8 @@
                         <div class="swiper-slide"><a style="background-image: url('./images/hot-1.jpg')" href="#"></a>
                         </div>
                     </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
                 <a href="#" class="addr-hot-all"><i class="fa fa-map-marker"></i> 探索全部目的地</a>
             </div>
@@ -550,6 +528,8 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
                 </div>
 
@@ -820,7 +800,10 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
+
                 </div>
 
             </div>
@@ -931,6 +914,7 @@
         </div>
     </div>
 </div>
+
 <footer>
     <div class="lk-layout">
         <div class="foot-a">
@@ -1003,6 +987,7 @@
     </div>
 
 </footer>
+
 <script src="./js/index.js"></script>
 <script src="./js/jquery.min.js"></script>
 <script src="./lib/swiper/js/swiper.min.js"></script>
@@ -1017,12 +1002,17 @@
             el: '.swiper-pagination',
             clickable: true,
         },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
         // autoplay: {
         //     delay: 2000,
         //     stopOnLastSlide: false,
         //     disableOnInteraction: true,
         //     autoplayDisableOnInteraction : false
         // },
+
     });
 
     var myswiper = new Swiper('.my-swiper-4 .swiper-container', {
@@ -1033,6 +1023,10 @@
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         },
     });
 

@@ -51,6 +51,33 @@ header {
     line-height: 32px;
     position: relative;
 }
+/*search*/
+.header-search{
+    position: relative;
+    display: none;
+}
+.header-search input{
+    width: 360px;
+    height: 38px;
+    background-color: #efefef;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 38px;
+    margin-top: 13px;
+}
+header .header-search i{
+    font-size: 22px;
+    color: #999;
+    position: absolute;
+    top: 21px;
+    right: 9px;
+}
+
+.header-search input:focus {
+    /*color: #f5a263;*/
+    border: 1px solid #f5a263;
+    background-color: #fff;
+}
 
 .header-right li i {
     font-size: 22px;
@@ -366,6 +393,174 @@ header {
     height: 8px;
     border-top: 2px solid #ccc;
     border-right: 2px solid #ccc;
+}
+
+.banner-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12);
+}
+
+.banner-fixed .header-menu a {
+    color: #000;
+}
+.banner-fixed .header-search{
+    display: block;
+}
+/*city*/
+.city-layout{
+    width: 1160px;
+    margin: 0 auto;
+}
+/*产品下方的文字*/
+.active-body-b {
+    width: 100%;
+    height: 145px;
+    box-sizing: border-box;
+    padding: 0 12px 12px;
+    position: relative;
+}
+
+.active-body-b h3 {
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 8px;
+    width: 205px;
+}
+
+.active-body-b p {
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 6px;
+    color: #888;
+}
+
+.active-body-b div {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+}
+
+.active-body-b p span {
+    color: #f5a263;
+}
+
+.active-body-b .active-money {
+    font-size: 18px;
+    color: #333;
+}
+
+.active-body-b .active-money i {
+    color: #f5a263;
+}
+
+/**/
+.them-body-descr h3 {
+    font-size: 16px;
+    line-height: 19px;
+    width: 286px;
+}
+
+/*评分*/
+.lk-grade {
+    font-size: 12px;
+    color: #999;
+    margin-top: 6px;
+}
+
+.lk-grade span {
+    color: #f5a263;
+}
+
+.them-body-descr {
+    position: relative;
+    height: 132px;
+    box-sizing: border-box;
+}
+
+.them-body-descr .active-old {
+    line-height: 18px;
+    text-decoration: line-through;
+    color: #999;
+}
+
+.them-body-descr .active-new {
+    font-size: 18px;
+    line-height: 20px;
+    color: #000;
+    font-weight: 700;
+    margin-top: 2px;
+    width: 349px;
+}
+
+.them-body-descr .active-new .fa {
+    color: #ff5722;
+}
+
+.them-body-descr > div {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+}
+
+.them-body-descr .active-new span {
+    font-size: 12px;
+    color: #24b985;
+    font-weight: 400;
+    float: right;
+}
+
+.theme-body-hot {
+    display: inline-block;
+    width: 32px;
+    height: 38px;
+    background-image: url(../images/sprites-icon-05eea842e1.png);
+    background-position: 0px -1601px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    right: 12px;
+}
+
+.theme-body-hot span {
+    box-sizing: border-box;
+    width: 50px;
+    height: 36px;
+    position: absolute;
+    top: -55px;
+    right: -9px;
+    color: #999;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 2px;
+    font-size: 12px;
+    display: none;
+}
+
+.theme-body-hot span::before {
+    content: "";
+    display: none;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    margin-left: -6px;
+    transform: rotate(45deg);
+}
+
+.theme-body-hot:hover span {
+    display: block;
+}
+
+.theme-body-hot:hover span::before {
+    display: block;
 }
 
 
