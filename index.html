@@ -17,646 +17,366 @@
 
 </head>
 <body>
-<!--header-->
-<header>
-    <div class="header-logo">
-        <a href="/">客路</a>
-    </div>
-    <div class="header-search">
-        <input type="text" placeholder="搜索全球目的地 / 活动">
-        <i class="fa fa-search"></i>
-    </div>
-    <div class="header-right">
-        <ul class="header-menu">
-            <li>
-                <a href="#">
+<div id="app">
+    <!--header-->
+    <header :class="{'header-fixed':scrollTag}">
+        <div class="header-logo">
+            <a href="/">客路</a>
+        </div>
+        <div class="header-search">
+            <input type="text" placeholder="搜索全球目的地 / 活动">
+            <i class="fa fa-search"></i>
+        </div>
+        <div class="header-right">
+            <ul class="header-menu">
+                <li>
+                    <a href="#">
                     <span class="flag-icon flag-icon-cn">
                     </span>
-                    <i class="fa fa-angle-down "></i>
-                </a>
-                <div class="country-items">
-                    <ul>
-                        <li>
-                            <a href="javascript:;" class="t12 j_lang_val" data-value="en-AU">
-                                <i class="flag-icon flag-icon-au"></i>
-                                <span>English (Australia)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
-                                <i class="flag-icon flag-icon-ca"></i>
-                                <span>English (Canada)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
-                                <i class="flag-icon flag-icon-hk"></i>
-                                <span>English (Hong Kong)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
-                                <i class="flag-icon flag-icon-in"></i>
-                                <span>English (India)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
-                                <i class="flag-icon flag-icon-my"></i>
-                                <span>English (Malaysia)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
-                                <i class="flag-icon flag-icon-nz"></i>
-                                <span>English (New Zealand)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
-                                <i class="flag-icon flag-icon-ph"></i>
-                                <span>English (Philippines)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
-                                <i class="flag-icon flag-icon-si"></i>
-                                <span>English (Singapore)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
-                                <i class="flag-icon flag-icon-us"></i>
-                                <span>English (US)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
-                                <i class="flag-icon flag-icon-uk"></i>
-                                <span>English (UK)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
-                                <i class="flag-icon flag-icon-it"></i>
-                                <span>English (International)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
-                                <i class="flag-icon flag-icon-cn"></i>
-                                <span>简体中文</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
-                                <i class="flag-icon flag-icon-hk"></i>
-                                <span>繁體中文 (香港)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
-                                <i class="flag-icon flag-icon-tw"></i>
-                                <span>繁體中文 (台灣)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
-                                <i class="flag-icon flag-icon-jp"></i>
-                                <span>日本語</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
-                                <i class="flag-icon flag-icon-kr"></i>
-                                <span>한국어</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
-                                <i class="flag-icon flag-icon-th"></i>
-                                <span>ไทย</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
-                                <i class="flag-icon flag-icon-vn"></i>
-                                <span>Tiếng Việt</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
-                                <i class="flag-icon flag-icon-id"></i>
-                                <span>Bahasa Indonesia</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <span>选择语言</span>
-                </div>
-            </li>
-            <li>
-                <a href="#">CNY
-                    <i class="fa fa-angle-down "></i>
-                </a>
-                <div class="head-moneys">
-                    <div class="moneys-t">
-                        <ul class="money-items">
-                            <li><a href="#"><span class="gray">CNY</span>人民币</a></li>
-                            <li><a href="#"><span class="gray">HKD</span> 港币</a></li>
-                            <li><a href="#"><span class="gray">MYR</span> 林吉特</a></li>
-                            <li><a href="#"><span class="gray">TWD</span> 台币</a></li>
-                            <li><a href="#"><span class="gray">SGD</span> 新币</a></li>
-                            <li><a href="#"><span class="gray">USD</span> 美元</a></li>
-                            <li><a href="#"><span class="gray">KRW</span> 韩元</a></li>
+                        <i class="fa fa-angle-down "></i>
+                    </a>
+                    <div class="country-items">
+                        <ul>
+                            <li>
+                                <a href="javascript:;" class="t12 j_lang_val" data-value="en-AU">
+                                    <i class="flag-icon flag-icon-au"></i>
+                                    <span>English (Australia)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
+                                    <i class="flag-icon flag-icon-ca"></i>
+                                    <span>English (Canada)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
+                                    <i class="flag-icon flag-icon-hk"></i>
+                                    <span>English (Hong Kong)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
+                                    <i class="flag-icon flag-icon-in"></i>
+                                    <span>English (India)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
+                                    <i class="flag-icon flag-icon-my"></i>
+                                    <span>English (Malaysia)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
+                                    <i class="flag-icon flag-icon-nz"></i>
+                                    <span>English (New Zealand)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
+                                    <i class="flag-icon flag-icon-ph"></i>
+                                    <span>English (Philippines)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
+                                    <i class="flag-icon flag-icon-si"></i>
+                                    <span>English (Singapore)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
+                                    <i class="flag-icon flag-icon-us"></i>
+                                    <span>English (US)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
+                                    <i class="flag-icon flag-icon-uk"></i>
+                                    <span>English (UK)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
+                                    <i class="flag-icon flag-icon-it"></i>
+                                    <span>English (International)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
+                                    <i class="flag-icon flag-icon-cn"></i>
+                                    <span>简体中文</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
+                                    <i class="flag-icon flag-icon-hk"></i>
+                                    <span>繁體中文 (香港)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
+                                    <i class="flag-icon flag-icon-tw"></i>
+                                    <span>繁體中文 (台灣)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
+                                    <i class="flag-icon flag-icon-jp"></i>
+                                    <span>日本語</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
+                                    <i class="flag-icon flag-icon-kr"></i>
+                                    <span>한국어</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
+                                    <i class="flag-icon flag-icon-th"></i>
+                                    <span>ไทย</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
+                                    <i class="flag-icon flag-icon-vn"></i>
+                                    <span>Tiếng Việt</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="t12 j_lang_val" data-value="en-CA">
+                                    <i class="flag-icon flag-icon-id"></i>
+                                    <span>Bahasa Indonesia</span>
+                                </a>
+                            </li>
                         </ul>
-                        <span>推荐使用货币</span>
+                        <span>选择语言</span>
                     </div>
-                    <div class="moneys-b">
-                        <ul class="money-items">
-                            <li><a href="#"><span class="gray">AED</span> 阿联酋迪拉姆</a></li>
-                            <li><a href="#"><span class="gray">AUD</span> 澳元</a></li>
-                            <li><a href="#"><span class="gray">CAD</span> 加拿大元</a></li>
-                            <li><a href="#"><span class="gray">CHF</span> 瑞士法郎</a></li>
-                            <li><a href="#"><span class="gray">DKK</span> 丹麦克朗</a></li>
-                            <li><a href="#"><span class="gray">EGP</span> 埃及镑</a></li>
-                            <li><a href="#"><span class="gray">EUR</span> 欧元</a></li>
-                            <li><a href="#"><span class="gray">FJD</span> 斐济元</a></li>
-                            <li><a href="#"><span class="gray">GBP</span> 英镑</a></li>
-                            <li><a href="#"><span class="gray">IDR</span> 印尼盾</a></li>
-                            <li><a href="#"><span class="gray">INR</span> 印度卢比</a></li>
-                            <li><a href="#"><span class="gray">ISK</span> 冰岛克朗</a></li>
-                            <li><a href="#"><span class="gray">JOD</span> 约旦第纳尔</a></li>
-                            <li><a href="#"><span class="gray">JPY</span> 日元</a></li>
-                            <li><a href="#"><span class="gray">KHR</span> 瑞尔</a></li>
-                            <li><a href="#"><span class="gray">LAK</span> 老挝基普</a></li>
-                            <li><a href="#"><span class="gray">LBP</span> 黎巴嫩镑</a></li>
-                            <li><a href="#"><span class="gray">MAD</span> 摩洛哥迪拉姆</a></li>
-                            <li><a href="#" class="moneys-b-t"><span class="gray">MGA</span> 马达加斯加阿里亚里</a></li>
-                            <li><a href="#"><span class="gray">MMK</span> 缅元</a></li>
-                            <li><a href="#"><span class="gray">MOP</span> 澳门元</a></li>
-                            <li><a href="#"><span class="gray">MUR</span> 毛里求斯卢比</a></li>
-                            <li><a href="#"><span class="gray">MXN</span> 墨西哥比索</a></li>
-                            <li><a href="#"><span class="gray">NOK</span> 挪威克朗</a></li>
-                            <li><a href="#"><span class="gray">NZD</span> 新西兰元</a></li>
-                            <li><a href="#"><span class="gray">OMR</span> 阿曼里亚尔</a></li>
-                            <li><a href="#"><span class="gray">PHP</span> 菲律宾比索</a></li>
-                            <li><a href="#"><span class="gray">QAR</span> 卡塔尔里亚尔</a></li>
-                            <li><a href="#"><span class="gray">RUB</span> 俄罗斯卢布</a></li>
-                            <li><a href="#"><span class="gray">SEK</span> 瑞典克朗</a></li>
-                            <li><a href="#"><span class="gray">THB</span> 泰铢</a></li>
-                            <li><a href="#"><span class="gray">TRY</span> 新土耳其里拉</a></li>
-                            <li><a href="#"><span class="gray">VND</span> 越南盾</a></li>
-                            <li><a href="#"><span class="gray">ZAR</span> 南非兰特</a></li>
+                </li>
+                <li>
+                    <a href="#">CNY
+                        <i class="fa fa-angle-down "></i>
+                    </a>
+                    <div class="head-moneys">
+                        <div class="moneys-t">
+                            <ul class="money-items">
+                                <li><a href="#"><span class="gray">CNY</span>人民币</a></li>
+                                <li><a href="#"><span class="gray">HKD</span> 港币</a></li>
+                                <li><a href="#"><span class="gray">MYR</span> 林吉特</a></li>
+                                <li><a href="#"><span class="gray">TWD</span> 台币</a></li>
+                                <li><a href="#"><span class="gray">SGD</span> 新币</a></li>
+                                <li><a href="#"><span class="gray">USD</span> 美元</a></li>
+                                <li><a href="#"><span class="gray">KRW</span> 韩元</a></li>
+                            </ul>
+                            <span>推荐使用货币</span>
+                        </div>
+                        <div class="moneys-b">
+                            <ul class="money-items">
+                                <li><a href="#"><span class="gray">AED</span> 阿联酋迪拉姆</a></li>
+                                <li><a href="#"><span class="gray">AUD</span> 澳元</a></li>
+                                <li><a href="#"><span class="gray">CAD</span> 加拿大元</a></li>
+                                <li><a href="#"><span class="gray">CHF</span> 瑞士法郎</a></li>
+                                <li><a href="#"><span class="gray">DKK</span> 丹麦克朗</a></li>
+                                <li><a href="#"><span class="gray">EGP</span> 埃及镑</a></li>
+                                <li><a href="#"><span class="gray">EUR</span> 欧元</a></li>
+                                <li><a href="#"><span class="gray">FJD</span> 斐济元</a></li>
+                                <li><a href="#"><span class="gray">GBP</span> 英镑</a></li>
+                                <li><a href="#"><span class="gray">IDR</span> 印尼盾</a></li>
+                                <li><a href="#"><span class="gray">INR</span> 印度卢比</a></li>
+                                <li><a href="#"><span class="gray">ISK</span> 冰岛克朗</a></li>
+                                <li><a href="#"><span class="gray">JOD</span> 约旦第纳尔</a></li>
+                                <li><a href="#"><span class="gray">JPY</span> 日元</a></li>
+                                <li><a href="#"><span class="gray">KHR</span> 瑞尔</a></li>
+                                <li><a href="#"><span class="gray">LAK</span> 老挝基普</a></li>
+                                <li><a href="#"><span class="gray">LBP</span> 黎巴嫩镑</a></li>
+                                <li><a href="#"><span class="gray">MAD</span> 摩洛哥迪拉姆</a></li>
+                                <li><a href="#" class="moneys-b-t"><span class="gray">MGA</span> 马达加斯加阿里亚里</a></li>
+                                <li><a href="#"><span class="gray">MMK</span> 缅元</a></li>
+                                <li><a href="#"><span class="gray">MOP</span> 澳门元</a></li>
+                                <li><a href="#"><span class="gray">MUR</span> 毛里求斯卢比</a></li>
+                                <li><a href="#"><span class="gray">MXN</span> 墨西哥比索</a></li>
+                                <li><a href="#"><span class="gray">NOK</span> 挪威克朗</a></li>
+                                <li><a href="#"><span class="gray">NZD</span> 新西兰元</a></li>
+                                <li><a href="#"><span class="gray">OMR</span> 阿曼里亚尔</a></li>
+                                <li><a href="#"><span class="gray">PHP</span> 菲律宾比索</a></li>
+                                <li><a href="#"><span class="gray">QAR</span> 卡塔尔里亚尔</a></li>
+                                <li><a href="#"><span class="gray">RUB</span> 俄罗斯卢布</a></li>
+                                <li><a href="#"><span class="gray">SEK</span> 瑞典克朗</a></li>
+                                <li><a href="#"><span class="gray">THB</span> 泰铢</a></li>
+                                <li><a href="#"><span class="gray">TRY</span> 新土耳其里拉</a></li>
+                                <li><a href="#"><span class="gray">VND</span> 越南盾</a></li>
+                                <li><a href="#"><span class="gray">ZAR</span> 南非兰特</a></li>
+                            </ul>
+                            <span>其他货币</span>
+                        </div>
+
+                    </div>
+                </li>
+                <li><a href="#">APP下载</a></li>
+                <li><a href="#">帮助中心</a></li>
+                <li><a href="#">最近浏览<i class="fa fa-angle-down "></i></a>
+                    <div class="head-history">
+                        <ul>
+                            <li><a href="#">
+                                <img src="./images/his1.jpg" alt="">
+                                <div>
+                                    <h3>越南下龙湾一日游</h3>
+                                    <p><span>★ 4.4</span> (1,622条评价)|22K 人参加过</p>
+                                    <p>¥ 304</p>
+                                    <p>¥ 247<i class="fa fa-flash"></i></p>
+                                    <p>最早可預訂日期：今日</p>
+                                </div>
+                            </a></li>
+                            <li><a href="#">
+                                <img src="./images/his1.jpg" alt="">
+                                <div>
+                                    <h3>越南下龙湾一日游</h3>
+                                    <p><span>★ 4.4</span> (1,622条评价)|22K 人参加过</p>
+                                    <p>¥ 304</p>
+                                    <p>¥ 247<i class="fa fa-flash"></i></p>
+                                    <p>最早可預訂日期：今日</p>
+                                </div>
+                            </a></li>
+                            <li><a href="#">
+                                <img src="./images/his1.jpg" alt="">
+                                <div>
+                                    <h3>越南下龙湾一日游</h3>
+                                    <p><span>★ 4.4</span> (1,622条评价)|22K 人参加过</p>
+                                    <p>¥ 304</p>
+                                    <p>¥ 247<i class="fa fa-flash"></i></p>
+                                    <p>最早可預訂日期：今日</p>
+                                </div>
+                            </a></li>
+                            <li><a href="#">
+                                <img src="./images/his1.jpg" alt="">
+                                <div>
+                                    <h3>越南下龙湾一日游</h3>
+                                    <p><span>★ 4.4</span> (1,622条评价)|22K 人参加过</p>
+                                    <p>¥ 304</p>
+                                    <p>¥ 247<i class="fa fa-flash"></i></p>
+                                    <p>最早可預訂日期：今日</p>
+                                </div>
+                            </a></li>
                         </ul>
-                        <span>其他货币</span>
+
                     </div>
-
-                </div>
-            </li>
-            <li><a href="#">APP下载</a></li>
-            <li><a href="#">帮助中心</a></li>
-            <li><a href="#">最近浏览<i class="fa fa-angle-down "></i></a>
-                <div class="head-history">
-                    <ul>
-                        <li><a href="#">
-                            <img src="./images/his1.jpg" alt="">
-                            <div>
-                                <h3>越南下龙湾一日游</h3>
-                                <p><span>★ 4.4</span> (1,622条评价)|22K 人参加过</p>
-                                <p>¥ 304</p>
-                                <p>¥ 247<i class="fa fa-flash"></i></p>
-                                <p>最早可預訂日期：今日</p>
-                            </div>
-                        </a></li>
-                        <li><a href="#">
-                            <img src="./images/his1.jpg" alt="">
-                            <div>
-                                <h3>越南下龙湾一日游</h3>
-                                <p><span>★ 4.4</span> (1,622条评价)|22K 人参加过</p>
-                                <p>¥ 304</p>
-                                <p>¥ 247<i class="fa fa-flash"></i></p>
-                                <p>最早可預訂日期：今日</p>
-                            </div>
-                        </a></li>
-                        <li><a href="#">
-                            <img src="./images/his1.jpg" alt="">
-                            <div>
-                                <h3>越南下龙湾一日游</h3>
-                                <p><span>★ 4.4</span> (1,622条评价)|22K 人参加过</p>
-                                <p>¥ 304</p>
-                                <p>¥ 247<i class="fa fa-flash"></i></p>
-                                <p>最早可預訂日期：今日</p>
-                            </div>
-                        </a></li>
-                        <li><a href="#">
-                            <img src="./images/his1.jpg" alt="">
-                            <div>
-                                <h3>越南下龙湾一日游</h3>
-                                <p><span>★ 4.4</span> (1,622条评价)|22K 人参加过</p>
-                                <p>¥ 304</p>
-                                <p>¥ 247<i class="fa fa-flash"></i></p>
-                                <p>最早可預訂日期：今日</p>
-                            </div>
-                        </a></li>
-                    </ul>
-
-                </div>
-                <i class="history-arrow"></i>
-            </li>
-            <li><a href="#">
-                <em class="fa fa-shopping-cart"></em>
-            </a></li>
-            <li><a href="#">登录</a></li>
-            <li><a href="#">注册</a></li>
+                    <i class="history-arrow"></i>
+                </li>
+                <li><a href="#">
+                    <em class="fa fa-shopping-cart"></em>
+                </a></li>
+                <li><a href="#">登录</a></li>
+                <li><a href="#">注册</a></li>
+            </ul>
+        </div>
+    </header>
+    <!--轮播图部分-->
+    <div class="banner">
+        <ul class="banner">
+            <li style="background-image: url('./images/banner1.jpg')"></li>
+            <li style="background-image: url('./images/banner2.jpg');"></li>
+            <li style="background-image: url('./images/banner3.jpg');"></li>
+            <li style="background-image: url('./images/banner4.jpg');"></li>
         </ul>
-    </div>
-</header>
-<!--轮播图部分-->
-<div class="banner">
-    <ul class="banner">
-        <li style="background-image: url('./images/banner1.jpg')"></li>
-        <li style="background-image: url('./images/banner2.jpg');"></li>
-        <li style="background-image: url('./images/banner3.jpg');"></li>
-        <li style="background-image: url('./images/banner4.jpg');"></li>
-    </ul>
-    <div class="banner-container">
-        <h1>探索未知的你</h1>
-        <h2>发现更好玩的世界，预订独一无二的旅行体验</h2>
-        <div class="banner-search">
-            <div class="banner-search-top">
-                <input type="text" placeholder="输入目的地/景点/活动，开启探索之旅..."/>
-                <button><i class="fa fa-search"></i></button>
-            </div>
+        <div class="banner-container">
+            <h1>探索未知的你</h1>
+            <h2>发现更好玩的世界，预订独一无二的旅行体验</h2>
+            <div class="banner-search">
+                <div class="banner-search-top">
+                    <input type="text" placeholder="输入目的地/景点/活动，开启探索之旅..."/>
+                    <button><i class="fa fa-search"></i></button>
+                </div>
 
+            </div>
         </div>
     </div>
-</div>
-<!--promise-->
-<div class="promise">
-    <div class="promise-con">
-        <ul>
-            <li>
-                <div class="promise-img"></div>
-                <div>
-                    <h3>体验师精选活动</h3>
-                    <p>当地特色活动等你体验</p>
-                </div>
-            </li>
-            <li>
-                <div class="promise-img"></div>
-                <div>
-                    <h3>体验师精选活动</h3>
-                    <p>当地特色活动等你体验</p>
-                </div>
-            </li>
-            <li>
-                <div class="promise-img"></div>
-                <div>
-                    <h3>体验师精选活动</h3>
-                    <p>当地特色活动等你体验</p>
-                </div>
-            </li>
-        </ul>
+    <!--promise-->
+    <div class="promise">
+        <div class="promise-con">
+            <ul>
+                <li>
+                    <div class="promise-img"></div>
+                    <div>
+                        <h3>体验师精选活动</h3>
+                        <p>当地特色活动等你体验</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="promise-img"></div>
+                    <div>
+                        <h3>体验师精选活动</h3>
+                        <p>当地特色活动等你体验</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="promise-img"></div>
+                    <div>
+                        <h3>体验师精选活动</h3>
+                        <p>当地特色活动等你体验</p>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
 
     </div>
-
-</div>
-<!--目的地-->
-<div class="lk-addr">
-    <div class="lk-layout">
-        <!--        热门目的地-->
-        <div class="addr-hot">
-            <div class="addr-hot-title">
-                <h2>热门目的地</h2>
-                <p>发现最酷炫的当地玩法</p>
-            </div>
-            <div class="addr-hot-body">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><a style="background-image: url('./images/hot-2.jpg')" href="#">台北</a>
-                        </div>
-                        <div class="swiper-slide"><a style="background-image: url('./images/hot-1.jpg')" href="#">北京</a>
-                        </div>
-                        <div class="swiper-slide"><a style="background-image: url('./images/hot-1.jpg')" href="#"></a>
-                        </div>
-                        <div class="swiper-slide"><a style="background-image: url('./images/hot-1.jpg')" href="#"></a>
-                        </div>
-                        <div class="swiper-slide"><a style="background-image: url('./images/hot-1.jpg')" href="#"></a>
-                        </div>
-                        <div class="swiper-slide"><a style="background-image: url('./images/hot-1.jpg')" href="#"></a>
-                        </div>
-                        <div class="swiper-slide"><a style="background-image: url('./images/hot-1.jpg')" href="#"></a>
-                        </div>
-                        <div class="swiper-slide"><a style="background-image: url('./images/hot-1.jpg')" href="#"></a>
-                        </div>
-                        <div class="swiper-slide"><a style="background-image: url('./images/hot-1.jpg')" href="#"></a>
-                        </div>
-                        <div class="swiper-slide"><a style="background-image: url('./images/hot-1.jpg')" href="#"></a>
-                        </div>
-                        <div class="swiper-slide"><a style="background-image: url('./images/hot-1.jpg')" href="#"></a>
-                        </div>
-                        <div class="swiper-slide"><a style="background-image: url('./images/hot-1.jpg')" href="#"></a>
-                        </div>
-                        <div class="swiper-slide"><a style="background-image: url('./images/hot-1.jpg')" href="#"></a>
-                        </div>
-                        <div class="swiper-slide"><a style="background-image: url('./images/hot-1.jpg')" href="#"></a>
-                        </div>
-                        <div class="swiper-slide"><a style="background-image: url('./images/hot-1.jpg')" href="#"></a>
-                        </div>
-                        <div class="swiper-slide"><a style="background-image: url('./images/hot-1.jpg')" href="#"></a>
-                        </div>
-                    </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+    <!--目的地-->
+    <div class="lk-addr">
+        <div class="lk-layout">
+            <!--        热门目的地-->
+            <div class="addr-hot">
+                <div class="addr-hot-title">
+                    <h2>热门目的地</h2>
+                    <p>发现最酷炫的当地玩法</p>
                 </div>
-                <a href="#" class="addr-hot-all"><i class="fa fa-map-marker"></i> 探索全部目的地</a>
-            </div>
-        </div>
-        <!--        热卖活动-->
-        <div class="addr-hot-active">
-            <div class="addr-hot-title">
-                <h2>热卖活动</h2>
-                <p>体验各地最受欢迎的精彩活动</p>
-            </div>
-
-            <div class="add-active-body">
-                <div class="my-swiper-4">
+                <div class="addr-hot-body">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <a href="#">
-                                    <div class="active-img">
-                                        <i class="fa fa-map-marker"></i>
-                                        JR 列车
-                                    </div>
-                                    <div class="active-body-b">
-                                        <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
-                                        <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                                        <div>
-                                            <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
-                                            <p class="active-time">最早可预订日期：2019年8月13日</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide"><a href="#">
-                                <div class="active-img">
-                                    <i class="fa fa-map-marker"></i>
-                                    JR 列车
-                                </div>
-                                <div class="active-body-b">
-                                    <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
-                                    <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                                    <div>
-                                        <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
-                                        <p class="active-time">最早可预订日期：2019年8月13日</p>
-                                    </div>
-                                </div>
-                            </a></div>
-                            <div class="swiper-slide"><a href="#">
-                                <div class="active-img">
-                                    <i class="fa fa-map-marker"></i>
-                                    JR 列车
-                                </div>
-                                <div class="active-body-b">
-                                    <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
-                                    <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                                    <div>
-                                        <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
-                                        <p class="active-time">最早可预订日期：2019年8月13日</p>
-                                    </div>
-                                </div>
-                            </a></div>
-                            <div class="swiper-slide"><a href="#">
-                                <div class="active-img">
-                                    <i class="fa fa-map-marker"></i>
-                                    JR 列车
-                                </div>
-                                <div class="active-body-b">
-                                    <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
-                                    <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                                    <div>
-                                        <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
-                                        <p class="active-time">最早可预订日期：2019年8月13日</p>
-                                    </div>
-                                </div>
-                            </a></div>
-                            <div class="swiper-slide"><a href="#">
-                                <div class="active-img">
-                                    <i class="fa fa-map-marker"></i>
-                                    JR 列车
-                                </div>
-                                <div class="active-body-b">
-                                    <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
-                                    <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                                    <div>
-                                        <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
-                                        <p class="active-time">最早可预订日期：2019年8月13日</p>
-                                    </div>
-                                </div>
-                            </a></div>
-                            <div class="swiper-slide"><a href="#">
-                                <div class="active-img">
-                                    <i class="fa fa-map-marker"></i>
-                                    JR 列车
-                                </div>
-                                <div class="active-body-b">
-                                    <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
-                                    <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                                    <div>
-                                        <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
-                                        <p class="active-time">最早可预订日期：2019年8月13日</p>
-                                    </div>
-                                </div>
-                            </a></div>
-                            <div class="swiper-slide"><a href="#">
-                                <div class="active-img">
-                                    <i class="fa fa-map-marker"></i>
-                                    JR 列车
-                                </div>
-                                <div class="active-body-b">
-                                    <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
-                                    <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                                    <div>
-                                        <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
-                                        <p class="active-time">最早可预订日期：2019年8月13日</p>
-                                    </div>
-                                </div>
-                            </a></div>
-                            <div class="swiper-slide"><a href="#">
-                                <div class="active-img">
-                                    <i class="fa fa-map-marker"></i>
-                                    JR 列车
-                                </div>
-                                <div class="active-body-b">
-                                    <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
-                                    <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                                    <div>
-                                        <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
-                                        <p class="active-time">最早可预订日期：2019年8月13日</p>
-                                    </div>
-                                </div>
-                            </a></div>
-                            <div class="swiper-slide"><a href="#">
-                                <div class="active-img">
-                                    <i class="fa fa-map-marker"></i>
-                                    JR 列车
-                                </div>
-                                <div class="active-body-b">
-                                    <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
-                                    <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                                    <div>
-                                        <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
-                                        <p class="active-time">最早可预订日期：2019年8月13日</p>
-                                    </div>
-                                </div>
-                            </a></div>
-                            <div class="swiper-slide">
-                                <a href="#">
-                                    <div class="active-img">
-                                        <i class="fa fa-map-marker"></i>
-                                        JR 列车
-                                    </div>
-                                    <div class="active-body-b">
-                                        <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
-                                        <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                                        <div>
-                                            <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
-                                            <p class="active-time">最早可预订日期：2019年8月13日</p>
-                                        </div>
-                                    </div>
-                                </a>
+
+                            <div class="swiper-slide" @mouseenter="getMouseEnter"
+                                 @mouseleave="getMouseLeave"
+                                 v-for="item in hotAddr"
+                                 :key="item.id"><a
+                                    style="background-image: url('./images/hot-2.jpg')"
+                                    href="#">台北</a>
                             </div>
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                     </div>
+                    <a href="#" class="addr-hot-all"><i class="fa fa-map-marker"></i> 探索全部目的地</a>
                 </div>
-
             </div>
-
-        </div>
-        <!--        本季优选主题-->
-        <div class="lk-theme">
-            <div class="addr-hot-title">
-                <h2>本季优选主题</h2>
-                <p>搜罗此刻最适合你的新体验</p>
-            </div>
-            <div class="theme-body">
-                <div>
-                    <a href="javasript:;" class="theme-body-item">
-                        <div>
-                            <h3>悠悠夏日长</h3>
-                            <p>浮潜、跳岛、水上乐园、与鲸鲨共游……悠长夏日就要无乐不玩！</p>
-                            <i>查看更多</i>
-                        </div>
-                    </a>
-                </div>
-                <div class="theme-body-product">
-                    <a href="#">
-                        <div class="theme-body-img">
-                            <i class="fa fa-map-marker"></i>
-                            宿雾
-                            <span>19% OFF</span>
-                        </div>
-                        <div class="them-body-descr">
-                            <h3>【优惠】奥斯洛鲸鲨共游（宿雾市或麦克坦岛出发）</h3>
-                            <p class="lk-grade"><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                            <div>
-                                <p class="active-old">￥ 489</p>
-                                <p class="active-new">￥ 394 <i class="fa fa-flash"></i> <span>最早可预订日期：明日</span></p>
-                            </div>
-                            <i class="theme-body-hot">
-                                <span> 热门</span>
-                            </i>
-                        </div>
-
-                    </a>
-
-                </div>
-                <div class="theme-body-product">
-                    <a href="#">
-                        <div class="theme-body-img">
-                            <i class="fa fa-map-marker"></i>
-                            宿雾
-                            <span>19% OFF</span>
-                        </div>
-                        <div class="them-body-descr">
-                            <h3>【优惠】奥斯洛鲸鲨共游（宿雾市或麦克坦岛出发）</h3>
-                            <p class="lk-grade"><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                            <div>
-                                <p class="active-old">￥ 489</p>
-                                <p class="active-new">￥ 394 <i class="fa fa-flash"></i> <span>最早可预订日期：明日</span></p>
-                            </div>
-                            <i class="theme-body-hot">
-                                <span> 热门</span>
-                            </i>
-                        </div>
-
-                    </a>
-
-                </div>
-                <div class="theme-body-product">
-                    <a href="#">
-                        <div class="theme-body-img">
-                            <i class="fa fa-map-marker"></i>
-                            宿雾
-                            <span>19% OFF</span>
-                        </div>
-                        <div class="them-body-descr">
-                            <h3>【优惠】奥斯洛鲸鲨共游（宿雾市或麦克坦岛出发）</h3>
-                            <p class="lk-grade"><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                            <div>
-                                <p class="active-old">￥ 489</p>
-                                <p class="active-new">￥ 394 <i class="fa fa-flash"></i> <span>最早可预订日期：明日</span></p>
-                            </div>
-                            <i class="theme-body-hot">
-                                <span> 热门</span>
-                            </i>
-                        </div>
-
-                    </a>
-
-                </div>
-                <div class="theme-body-product">
-                    <a href="#">
-                        <div class="theme-body-img">
-                            <i class="fa fa-map-marker"></i>
-                            宿雾
-                            <span>19% OFF</span>
-                        </div>
-                        <div class="them-body-descr">
-                            <h3>【优惠】奥斯洛鲸鲨共游（宿雾市或麦克坦岛出发）</h3>
-                            <p class="lk-grade"><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                            <div>
-                                <p class="active-old">￥ 489</p>
-                                <p class="active-new">￥ 394 <i class="fa fa-flash"></i> <span>最早可预订日期：明日</span></p>
-                            </div>
-                            <i class="theme-body-hot">
-                                <span> 热门</span>
-                            </i>
-                        </div>
-
-                    </a>
-
+            <!--        热卖活动-->
+            <div class="addr-hot-active">
+                <div class="addr-hot-title">
+                    <h2>热卖活动</h2>
+                    <p>体验各地最受欢迎的精彩活动</p>
                 </div>
 
-                <div class=""></div>
-            </div>
-        </div>
-        <!--        热卖活动-->
-        <div class="addr-hot-active">
-            <div class="addr-hot-title">
-                <h2>客路推荐</h2>
-                <p>优选旅行体验师的精心推荐</p>
-            </div>
-
-            <div class="add-active-body">
-                <div class="my-swiper-4">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <a href="#">
+                <div class="add-active-body">
+                    <div class="my-swiper-4">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <div class="active-img">
+                                            <i class="fa fa-map-marker"></i>
+                                            JR 列车
+                                        </div>
+                                        <div class="active-body-b">
+                                            <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
+                                            <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
+                                            <div>
+                                                <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
+                                                <p class="active-time">最早可预订日期：2019年8月13日</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide"><a href="#">
                                     <div class="active-img">
                                         <i class="fa fa-map-marker"></i>
                                         JR 列车
@@ -669,122 +389,8 @@
                                             <p class="active-time">最早可预订日期：2019年8月13日</p>
                                         </div>
                                     </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide"><a href="#">
-                                <div class="active-img">
-                                    <i class="fa fa-map-marker"></i>
-                                    JR 列车
-                                </div>
-                                <div class="active-body-b">
-                                    <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
-                                    <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                                    <div>
-                                        <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
-                                        <p class="active-time">最早可预订日期：2019年8月13日</p>
-                                    </div>
-                                </div>
-                            </a></div>
-                            <div class="swiper-slide"><a href="#">
-                                <div class="active-img">
-                                    <i class="fa fa-map-marker"></i>
-                                    JR 列车
-                                </div>
-                                <div class="active-body-b">
-                                    <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
-                                    <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                                    <div>
-                                        <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
-                                        <p class="active-time">最早可预订日期：2019年8月13日</p>
-                                    </div>
-                                </div>
-                            </a></div>
-                            <div class="swiper-slide"><a href="#">
-                                <div class="active-img">
-                                    <i class="fa fa-map-marker"></i>
-                                    JR 列车
-                                </div>
-                                <div class="active-body-b">
-                                    <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
-                                    <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                                    <div>
-                                        <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
-                                        <p class="active-time">最早可预订日期：2019年8月13日</p>
-                                    </div>
-                                </div>
-                            </a></div>
-                            <div class="swiper-slide"><a href="#">
-                                <div class="active-img">
-                                    <i class="fa fa-map-marker"></i>
-                                    JR 列车
-                                </div>
-                                <div class="active-body-b">
-                                    <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
-                                    <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                                    <div>
-                                        <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
-                                        <p class="active-time">最早可预订日期：2019年8月13日</p>
-                                    </div>
-                                </div>
-                            </a></div>
-                            <div class="swiper-slide"><a href="#">
-                                <div class="active-img">
-                                    <i class="fa fa-map-marker"></i>
-                                    JR 列车
-                                </div>
-                                <div class="active-body-b">
-                                    <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
-                                    <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                                    <div>
-                                        <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
-                                        <p class="active-time">最早可预订日期：2019年8月13日</p>
-                                    </div>
-                                </div>
-                            </a></div>
-                            <div class="swiper-slide"><a href="#">
-                                <div class="active-img">
-                                    <i class="fa fa-map-marker"></i>
-                                    JR 列车
-                                </div>
-                                <div class="active-body-b">
-                                    <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
-                                    <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                                    <div>
-                                        <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
-                                        <p class="active-time">最早可预订日期：2019年8月13日</p>
-                                    </div>
-                                </div>
-                            </a></div>
-                            <div class="swiper-slide"><a href="#">
-                                <div class="active-img">
-                                    <i class="fa fa-map-marker"></i>
-                                    JR 列车
-                                </div>
-                                <div class="active-body-b">
-                                    <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
-                                    <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                                    <div>
-                                        <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
-                                        <p class="active-time">最早可预订日期：2019年8月13日</p>
-                                    </div>
-                                </div>
-                            </a></div>
-                            <div class="swiper-slide"><a href="#">
-                                <div class="active-img">
-                                    <i class="fa fa-map-marker"></i>
-                                    JR 列车
-                                </div>
-                                <div class="active-body-b">
-                                    <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
-                                    <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
-                                    <div>
-                                        <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
-                                        <p class="active-time">最早可预订日期：2019年8月13日</p>
-                                    </div>
-                                </div>
-                            </a></div>
-                            <div class="swiper-slide">
-                                <a href="#">
+                                </a></div>
+                                <div class="swiper-slide"><a href="#">
                                     <div class="active-img">
                                         <i class="fa fa-map-marker"></i>
                                         JR 列车
@@ -797,256 +403,572 @@
                                             <p class="active-time">最早可预订日期：2019年8月13日</p>
                                         </div>
                                     </div>
-                                </a>
+                                </a></div>
+                                <div class="swiper-slide"><a href="#">
+                                    <div class="active-img">
+                                        <i class="fa fa-map-marker"></i>
+                                        JR 列车
+                                    </div>
+                                    <div class="active-body-b">
+                                        <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
+                                        <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
+                                        <div>
+                                            <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
+                                            <p class="active-time">最早可预订日期：2019年8月13日</p>
+                                        </div>
+                                    </div>
+                                </a></div>
+                                <div class="swiper-slide"><a href="#">
+                                    <div class="active-img">
+                                        <i class="fa fa-map-marker"></i>
+                                        JR 列车
+                                    </div>
+                                    <div class="active-body-b">
+                                        <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
+                                        <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
+                                        <div>
+                                            <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
+                                            <p class="active-time">最早可预订日期：2019年8月13日</p>
+                                        </div>
+                                    </div>
+                                </a></div>
+                                <div class="swiper-slide"><a href="#">
+                                    <div class="active-img">
+                                        <i class="fa fa-map-marker"></i>
+                                        JR 列车
+                                    </div>
+                                    <div class="active-body-b">
+                                        <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
+                                        <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
+                                        <div>
+                                            <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
+                                            <p class="active-time">最早可预订日期：2019年8月13日</p>
+                                        </div>
+                                    </div>
+                                </a></div>
+                                <div class="swiper-slide"><a href="#">
+                                    <div class="active-img">
+                                        <i class="fa fa-map-marker"></i>
+                                        JR 列车
+                                    </div>
+                                    <div class="active-body-b">
+                                        <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
+                                        <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
+                                        <div>
+                                            <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
+                                            <p class="active-time">最早可预订日期：2019年8月13日</p>
+                                        </div>
+                                    </div>
+                                </a></div>
+                                <div class="swiper-slide"><a href="#">
+                                    <div class="active-img">
+                                        <i class="fa fa-map-marker"></i>
+                                        JR 列车
+                                    </div>
+                                    <div class="active-body-b">
+                                        <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
+                                        <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
+                                        <div>
+                                            <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
+                                            <p class="active-time">最早可预订日期：2019年8月13日</p>
+                                        </div>
+                                    </div>
+                                </a></div>
+                                <div class="swiper-slide"><a href="#">
+                                    <div class="active-img">
+                                        <i class="fa fa-map-marker"></i>
+                                        JR 列车
+                                    </div>
+                                    <div class="active-body-b">
+                                        <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
+                                        <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
+                                        <div>
+                                            <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
+                                            <p class="active-time">最早可预订日期：2019年8月13日</p>
+                                        </div>
+                                    </div>
+                                </a></div>
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <div class="active-img">
+                                            <i class="fa fa-map-marker"></i>
+                                            JR 列车
+                                        </div>
+                                        <div class="active-body-b">
+                                            <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
+                                            <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
+                                            <div>
+                                                <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
+                                                <p class="active-time">最早可预订日期：2019年8月13日</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
                         </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
                     </div>
 
                 </div>
 
             </div>
+            <!--        本季优选主题-->
+            <div class="lk-theme">
+                <div class="addr-hot-title">
+                    <h2>本季优选主题</h2>
+                    <p>搜罗此刻最适合你的新体验</p>
+                </div>
+                <div class="theme-body">
+                    <div>
+                        <a href="javasript:;" class="theme-body-item">
+                            <div>
+                                <h3>悠悠夏日长</h3>
+                                <p>浮潜、跳岛、水上乐园、与鲸鲨共游……悠长夏日就要无乐不玩！</p>
+                                <i>查看更多</i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="theme-body-product">
+                        <a href="#">
+                            <div class="theme-body-img">
+                                <i class="fa fa-map-marker"></i>
+                                宿雾
+                                <span>19% OFF</span>
+                            </div>
+                            <div class="them-body-descr">
+                                <h3>【优惠】奥斯洛鲸鲨共游（宿雾市或麦克坦岛出发）</h3>
+                                <p class="lk-grade"><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
+                                <div>
+                                    <p class="active-old">￥ 489</p>
+                                    <p class="active-new">￥ 394 <i class="fa fa-flash"></i> <span>最早可预订日期：明日</span></p>
+                                </div>
+                                <i class="theme-body-hot">
+                                    <span> 热门</span>
+                                </i>
+                            </div>
 
+                        </a>
+
+                    </div>
+                    <div class="theme-body-product">
+                        <a href="#">
+                            <div class="theme-body-img">
+                                <i class="fa fa-map-marker"></i>
+                                宿雾
+                                <span>19% OFF</span>
+                            </div>
+                            <div class="them-body-descr">
+                                <h3>【优惠】奥斯洛鲸鲨共游（宿雾市或麦克坦岛出发）</h3>
+                                <p class="lk-grade"><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
+                                <div>
+                                    <p class="active-old">￥ 489</p>
+                                    <p class="active-new">￥ 394 <i class="fa fa-flash"></i> <span>最早可预订日期：明日</span></p>
+                                </div>
+                                <i class="theme-body-hot">
+                                    <span> 热门</span>
+                                </i>
+                            </div>
+
+                        </a>
+
+                    </div>
+                    <div class="theme-body-product">
+                        <a href="#">
+                            <div class="theme-body-img">
+                                <i class="fa fa-map-marker"></i>
+                                宿雾
+                                <span>19% OFF</span>
+                            </div>
+                            <div class="them-body-descr">
+                                <h3>【优惠】奥斯洛鲸鲨共游（宿雾市或麦克坦岛出发）</h3>
+                                <p class="lk-grade"><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
+                                <div>
+                                    <p class="active-old">￥ 489</p>
+                                    <p class="active-new">￥ 394 <i class="fa fa-flash"></i> <span>最早可预订日期：明日</span></p>
+                                </div>
+                                <i class="theme-body-hot">
+                                    <span> 热门</span>
+                                </i>
+                            </div>
+
+                        </a>
+
+                    </div>
+                    <div class="theme-body-product">
+                        <a href="#">
+                            <div class="theme-body-img">
+                                <i class="fa fa-map-marker"></i>
+                                宿雾
+                                <span>19% OFF</span>
+                            </div>
+                            <div class="them-body-descr">
+                                <h3>【优惠】奥斯洛鲸鲨共游（宿雾市或麦克坦岛出发）</h3>
+                                <p class="lk-grade"><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
+                                <div>
+                                    <p class="active-old">￥ 489</p>
+                                    <p class="active-new">￥ 394 <i class="fa fa-flash"></i> <span>最早可预订日期：明日</span></p>
+                                </div>
+                                <i class="theme-body-hot">
+                                    <span> 热门</span>
+                                </i>
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                    <div class=""></div>
+                </div>
+            </div>
+            <!--        热卖活动-->
+            <div class="addr-hot-active">
+                <div class="addr-hot-title">
+                    <h2>客路推荐</h2>
+                    <p>优选旅行体验师的精心推荐</p>
+                </div>
+
+                <div class="add-active-body">
+                    <div class="my-swiper-4">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div @mouseenter="getMouseEnterTwo" @mouseleave="getMouseLeaveTwo"
+
+                                     v-for="item in hotActiveList" :key="item.id" class="swiper-slide">
+                                    <a href="#">
+                                        <div class="active-img">
+                                            <i class="fa fa-map-marker"></i>
+                                            JR 列车
+                                        </div>
+                                        <div class="active-body-b">
+                                            <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
+                                            <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
+                                            <div>
+                                                <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
+                                                <p class="active-time">最早可预订日期：2019年8月13日</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
         </div>
-    </div>
-    <!--    旅游背景图-->
-    <div class="lk-trval">
-        <h1>初次来 Klook？</h1>
-        <h2>与Klook一起，开启新旅程，探索世界的更多可能</h2>
-        <p>
+        <!--    旅游背景图-->
+        <div class="lk-trval">
+            <h1>初次来 Klook？</h1>
+            <h2>与Klook一起，开启新旅程，探索世界的更多可能</h2>
+            <p>
             <span>
                 <i class="fa fa-caret-right"></i>
             </span>
 
-        </p>
-    </div>
-    <!--    分享-->
-    <div class="lk-show">
-        <div class="lk-layout">
-            <div class="show-item" style="background-image: url('./images/show-1.jpg')">
-                <a href="#">
-                    <h5>邀请好友一起领取旅行基金</h5>
-                    <p>分享邀请链接给好友，注册领取HK$25 折扣！体验活动后您也会立即获得¥22.5旅行基金</p>
-                </a>
-            </div>
-            <div class="show-item" style="background-image: url('./images/show-1.jpg')">
-                <a href="#">
-                    <h5>邀请好友一起领取旅行基金</h5>
-                    <p>分享邀请链接给好友，注册领取HK$25 折扣！体验活动后您也会立即获得¥22.5旅行基金</p>
-                </a>
-            </div>
-            <div class="show-item" style="background-image: url('./images/show-1.jpg')">
-                <a href="#">
-                    <h5>邀请好友一起领取旅行基金</h5>
-                    <p>分享邀请链接给好友，注册领取HK$25 折扣！体验活动后您也会立即获得¥22.5旅行基金</p>
-                </a>
-            </div>
-        </div>
-
-    </div>
-    <!--合作伙伴-->
-    <div class="lk-brands">
-        <div class="lk-layout">
-            <h1>合作伙伴友情链接</h1>
-            <h2>客路携手各领域合作伙伴，为您打造旅途中的专属优惠！</h2>
-            <div class="partner_logo_box">
-                <!-- 还有根据IP地址判断来显示功能没有,缺少citilogo -->
-                <div class="partner_icon_scale"><a target="_blank" href="#">
-                    <i class="i_shangrila_cn"></i></a>
-                </div>
-                <div class="partner_icon_scale"><a target="_blank" href="#"><i
-                        class="i_airasia_cn"></i></a>
-                </div>
-                <div class="partner_icon_scale"><a target="_blank" href="#">
-                    <i class="i_big"></i></a>
-                </div>
-                <div class="partner_icon_scale">
-                    <a target="_blank" href="#">
-                        <i class="i_disney"></i>
-                    </a>
-                </div>
-                <div class="partner_icon_scale">
-                    <a target="_blank" href="#">
-                        <i data-image="i_bigbus" class="i_bigbus"></i></a>
-                </div>
-                <div class="partner_icon_scale">
-                    <a target="_blank" href="#"><i
-                            data-image="i_railpass" class="i_railpass"></i></a></div>
-                <div class="partner_icon_scale">
-                    <a target="_blank" href="#"><i
-                            data-image="i_index_wechat_cn" class="i_index_wechat_cn"></i></a>
-                </div>
-                <div class="partner_icon_scale"><a target="_blank"
-                                                   href="#"><i
-                        data-image="i_guotai_cn" class="i_guotai_cn"></i></a>
-                </div>
-                <div class="partner_icon_scale"><a target="_blank"
-                                                   href="#"><i
-                        data-image="i_hkexpress" class="i_hkexpress"></i></a></div>
-            </div>
-        </div>
-
-    </div>
-    <!--    媒体-->
-    <div class="lk-media">
-        <div class="lk-layout">
-            <h1>媒体报导</h1>
-            <h2>更多的人在了解客路，每一次鼓励都让我们不断成长</h2>
-            <div class="t_v_mid_box">
-                <div class="t_v_mid"><a href="/zh-CN/news" target="_blank"><i data-image="i_yicai" class="i_yicai"></i></a>
-                </div>
-                <div class="t_v_mid"><a href="/zh-CN/news" target="_blank"><i data-image="i_36kr2" class="i_36kr2"></i></a>
-                </div>
-                <div class="t_v_mid"><a href="/zh-CN/news" target="_blank"><i data-image="i_touzijie"
-                                                                              class="i_touzijie"></i></a></div>
-                <div class="t_v_mid"><a href="/zh-CN/news" target="_blank"><i data-image="i_tencent"
-                                                                              class="i_tencent"></i></a></div>
-                <div class="t_v_mid"><a href="/zh-CN/news" target="_blank"><i data-image="i_cnbc"
-                                                                              class="i_cnbc"></i></a></div>
-                <div class="t_v_mid"><a href="/zh-CN/news" target="_blank"><i data-image="i_scmp2" class="i_scmp2"></i></a>
-                </div>
-                <div class="t_v_mid"><a href="/zh-CN/news" target="_blank"><i data-image="i_tdn" class="i_tdn"></i></a>
-                </div>
-                <div class="t_v_mid"><a href="/zh-CN/news" target="_blank"><i data-image="i_wsj2"
-                                                                              class="i_wsj2"></i></a></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<footer>
-    <div class="lk-layout">
-        <div class="foot-a">
-
-            <div>
-                友情链接: <i class="fa fa-facebook"></i> <i class="fa fa-twitter"></i> <i class="fa fa-weixin"></i><i
-                    class="fa fa-youtube"></i>
-            </div>
-            <div class="foot-grid">
-                <div>
-                    <span>最高可省60%，只有订阅用户才能享受到隐藏优惠</span>
-                    <p>点击「订阅」，即表示您同意我们的服务条款及隐私政策</p>
-                </div>
-                <div class="foot-search">
-                    <input type="text" placeholder="请输入邮箱以接收订阅信息">
-                    <a href="#">订阅</a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="foot-border"></div>
-    <div class="lk-layout">
-        <div class="foot-b">
-            <p class="t12 copyright ">©2014-2019 Klook Travel Technology Limited. All Rights Reserved.<br>HK Travel
-                Agent Licence: 354005.<br>SG
-                Travel Agent Licence: 02851.<br>TW
-                Travel Agent License: 甲
-                03950.</p>
-            <ul>
-                <li class="t_white">认识客路</li>
-                <li><a href="/zh-CN/about/">关于客路</a></li>
-                <li><a href="/zh-CN/partner/">合作伙伴</a></li>
-                <li><a href="/zh-CN/careers/">加入我们</a></li>
-            </ul>
-            <ul>
-                <li class="t_white">携手客路</li>
-                <li><a href="https://merchant.klook.com/zh-CN/">商户登录</a></li>
-                <li><a href="http://affiliate.klook.com/zh-CN/">联合营销</a></li>
-                <li><a href="https://www.klook.com/zh-CN/agent/">同业交易</a></li>
-            </ul>
-            <ul>
-                <li class="t_white">网站条款</li>
-                <li><a href="/zh-CN/conditions/">使用条款</a></li>
-                <li><a href="/zh-CN/policy/">隐私政策</a></li>
-                <li><a href="/zh-CN/cookiepolicy/">Cookie政策</a></li>
-            </ul>
-            <div class="foot-paly">
-                <a href="#">咨询客路</a>
-                <h3>支付方式</h3>
-                <p>
-                    <span class="i_alipay m_justify_list"></span>
-                    <span class="i_newMaster m_justify_list"></span>
-                    <span class="i_wechatpay m_justify_list"></span>
-                    <span class="i_newAE m_justify_list"></span>
-                    <span class="i_newVisa m_justify_list"></span>
-                </p>
-
-            </div>
-
-        </div>
-    </div>
-    <div class="foot-border"></div>
-    <div class="lk-layout">
-        <div class="foot-c">
-            <p>
-                粤ICP号备14100233号-1 地址：深圳市福田区天安科技创业园大厦A1002室 客服电话：400-194-9240
             </p>
         </div>
+        <!--    分享-->
+        <div class="lk-show">
+            <div class="lk-layout">
+                <div class="show-item" style="background-image: url('./images/show-1.jpg')">
+                    <a href="#">
+                        <h5>邀请好友一起领取旅行基金</h5>
+                        <p>分享邀请链接给好友，注册领取HK$25 折扣！体验活动后您也会立即获得¥22.5旅行基金</p>
+                    </a>
+                </div>
+                <div class="show-item" style="background-image: url('./images/show-1.jpg')">
+                    <a href="#">
+                        <h5>邀请好友一起领取旅行基金</h5>
+                        <p>分享邀请链接给好友，注册领取HK$25 折扣！体验活动后您也会立即获得¥22.5旅行基金</p>
+                    </a>
+                </div>
+                <div class="show-item" style="background-image: url('./images/show-1.jpg')">
+                    <a href="#">
+                        <h5>邀请好友一起领取旅行基金</h5>
+                        <p>分享邀请链接给好友，注册领取HK$25 折扣！体验活动后您也会立即获得¥22.5旅行基金</p>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <!--合作伙伴-->
+        <div class="lk-brands">
+            <div class="lk-layout">
+                <h1>合作伙伴友情链接</h1>
+                <h2>客路携手各领域合作伙伴，为您打造旅途中的专属优惠！</h2>
+                <div class="partner_logo_box">
+                    <!-- 还有根据IP地址判断来显示功能没有,缺少citilogo -->
+                    <div class="partner_icon_scale"><a target="_blank" href="#">
+                        <i class="i_shangrila_cn"></i></a>
+                    </div>
+                    <div class="partner_icon_scale"><a target="_blank" href="#"><i
+                            class="i_airasia_cn"></i></a>
+                    </div>
+                    <div class="partner_icon_scale"><a target="_blank" href="#">
+                        <i class="i_big"></i></a>
+                    </div>
+                    <div class="partner_icon_scale">
+                        <a target="_blank" href="#">
+                            <i class="i_disney"></i>
+                        </a>
+                    </div>
+                    <div class="partner_icon_scale">
+                        <a target="_blank" href="#">
+                            <i data-image="i_bigbus" class="i_bigbus"></i></a>
+                    </div>
+                    <div class="partner_icon_scale">
+                        <a target="_blank" href="#"><i
+                                data-image="i_railpass" class="i_railpass"></i></a></div>
+                    <div class="partner_icon_scale">
+                        <a target="_blank" href="#"><i
+                                data-image="i_index_wechat_cn" class="i_index_wechat_cn"></i></a>
+                    </div>
+                    <div class="partner_icon_scale"><a target="_blank"
+                                                       href="#"><i
+                            data-image="i_guotai_cn" class="i_guotai_cn"></i></a>
+                    </div>
+                    <div class="partner_icon_scale"><a target="_blank"
+                                                       href="#"><i
+                            data-image="i_hkexpress" class="i_hkexpress"></i></a></div>
+                </div>
+            </div>
+
+        </div>
+        <!--    媒体-->
+        <div class="lk-media">
+            <div class="lk-layout">
+                <h1>媒体报导</h1>
+                <h2>更多的人在了解客路，每一次鼓励都让我们不断成长</h2>
+                <div class="t_v_mid_box">
+                    <div class="t_v_mid"><a href="/zh-CN/news" target="_blank"><i data-image="i_yicai"
+                                                                                  class="i_yicai"></i></a>
+                    </div>
+                    <div class="t_v_mid"><a href="/zh-CN/news" target="_blank"><i data-image="i_36kr2"
+                                                                                  class="i_36kr2"></i></a>
+                    </div>
+                    <div class="t_v_mid"><a href="/zh-CN/news" target="_blank"><i data-image="i_touzijie"
+                                                                                  class="i_touzijie"></i></a></div>
+                    <div class="t_v_mid"><a href="/zh-CN/news" target="_blank"><i data-image="i_tencent"
+                                                                                  class="i_tencent"></i></a></div>
+                    <div class="t_v_mid"><a href="/zh-CN/news" target="_blank"><i data-image="i_cnbc"
+                                                                                  class="i_cnbc"></i></a></div>
+                    <div class="t_v_mid"><a href="/zh-CN/news" target="_blank"><i data-image="i_scmp2"
+                                                                                  class="i_scmp2"></i></a>
+                    </div>
+                    <div class="t_v_mid"><a href="/zh-CN/news" target="_blank"><i data-image="i_tdn" class="i_tdn"></i></a>
+                    </div>
+                    <div class="t_v_mid"><a href="/zh-CN/news" target="_blank"><i data-image="i_wsj2"
+                                                                                  class="i_wsj2"></i></a></div>
+                </div>
+            </div>
+        </div>
     </div>
 
-</footer>
+    <footer>
+        <div class="lk-layout">
+            <div class="foot-a">
+
+                <div>
+                    友情链接: <i class="fa fa-facebook"></i> <i class="fa fa-twitter"></i> <i class="fa fa-weixin"></i><i
+                        class="fa fa-youtube"></i>
+                </div>
+                <div class="foot-grid">
+                    <div>
+                        <span>最高可省60%，只有订阅用户才能享受到隐藏优惠</span>
+                        <p>点击「订阅」，即表示您同意我们的服务条款及隐私政策</p>
+                    </div>
+                    <div class="foot-search">
+                        <input type="text" placeholder="请输入邮箱以接收订阅信息">
+                        <a href="#">订阅</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="foot-border"></div>
+        <div class="lk-layout">
+            <div class="foot-b">
+                <p class="t12 copyright ">©2014-2019 Klook Travel Technology Limited. All Rights Reserved.<br>HK Travel
+                    Agent Licence: 354005.<br>SG
+                    Travel Agent Licence: 02851.<br>TW
+                    Travel Agent License: 甲
+                    03950.</p>
+                <ul>
+                    <li class="t_white">认识客路</li>
+                    <li><a href="/zh-CN/about/">关于客路</a></li>
+                    <li><a href="/zh-CN/partner/">合作伙伴</a></li>
+                    <li><a href="/zh-CN/careers/">加入我们</a></li>
+                </ul>
+                <ul>
+                    <li class="t_white">携手客路</li>
+                    <li><a href="https://merchant.klook.com/zh-CN/">商户登录</a></li>
+                    <li><a href="http://affiliate.klook.com/zh-CN/">联合营销</a></li>
+                    <li><a href="https://www.klook.com/zh-CN/agent/">同业交易</a></li>
+                </ul>
+                <ul>
+                    <li class="t_white">网站条款</li>
+                    <li><a href="/zh-CN/conditions/">使用条款</a></li>
+                    <li><a href="/zh-CN/policy/">隐私政策</a></li>
+                    <li><a href="/zh-CN/cookiepolicy/">Cookie政策</a></li>
+                </ul>
+                <div class="foot-paly">
+                    <a href="#">咨询客路</a>
+                    <h3>支付方式</h3>
+                    <p>
+                        <span class="i_alipay m_justify_list"></span>
+                        <span class="i_newMaster m_justify_list"></span>
+                        <span class="i_wechatpay m_justify_list"></span>
+                        <span class="i_newAE m_justify_list"></span>
+                        <span class="i_newVisa m_justify_list"></span>
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="foot-border"></div>
+        <div class="lk-layout">
+            <div class="foot-c">
+                <p>
+                    粤ICP号备14100233号-1 地址：深圳市福田区天安科技创业园大厦A1002室 客服电话：400-194-9240
+                </p>
+            </div>
+        </div>
+
+    </footer>
+</div>
 
 <script src="./js/index.js"></script>
-<script src="./js/jquery.min.js"></script>
+<script src="./js/vue.min.js"></script>
+<script src="./js/axios.min.js"></script>
 <script src="./lib/swiper/js/swiper.min.js"></script>
 
 <script>
-    var swiper = new Swiper('.addr-hot-body .swiper-container', {
-        slidesPerView: 4,
-        slidesPerColumn: 2,
-        spaceBetween: 30,
-        slidesPerColumnFill: 'row',
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+    new Vue({
+        el: "#app",
+        data: {
+            bodyContainner: null,
+            scrollTag: false,
+            swiperOne: null,
+            swiperNum: null,
+            hotAddr: [
+                {id: 1},
+                {id: 2},
+                {id: 3},
+                {id: 4},
+                {id: 5},
+                {id: 6},
+                {id: 7},
+                {id: 8},
+                {id: 9},
+                {id: 10},
+                {id: 11},
+                {id: 12},
+                {id: 13},
+                {id: 14},
+                {id: 15},
+                {id: 16}
+            ],
+            hotActiveList: [
+                {id: 1},
+                {id: 2},
+                {id: 3},
+                {id: 4},
+                {id: 5},
+                {id: 6},
+                {id: 7},
+                {id: 8}
+            ]
         },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+        methods: {
+            async getIndex() {
+                const resu = await axios.post('http://starway.hzclouds.com/api/index/index', {default_currency: 'HKD'})
+                console.log(resu);
+            },
+            getMouseEnter() {
+                this.swiperOne.autoplay.stop()
+
+            },
+            getMouseLeave() {
+                this.swiperOne.autoplay.start()
+
+            },
+            getMouseEnterTwo() {
+                this.swiperNum.autoplay.stop()
+
+            },
+            getMouseLeaveTwo() {
+                this.swiperNum.autoplay.start()
+
+            },
+            getScrolltopNum() {
+                let top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset
+                if (top > 700) {
+                    this.scrollTag = true;
+                } else {
+                    this.scrollTag = false
+                }
+            }
+
         },
-        // autoplay: {
-        //     delay: 2000,
-        //     stopOnLastSlide: false,
-        //     disableOnInteraction: true,
-        //     autoplayDisableOnInteraction : false
-        // },
-
-    });
-
-    var myswiper = new Swiper('.my-swiper-4 .swiper-container', {
-        slidesPerView: 4,
-        spaceBetween: 30,
-        slidesPerColumn: 1,
-        freeMode: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+        created() {
+            this.getIndex()
         },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
 
-    $(".swiper-wrapper").on("mouseenter", function () {
-        swiper.autoplay.stop();
-    });
-    $(".swiper-wrapper").on("mouseleave", function () {
-        swiper.autoplay.start();
-    })
+        mounted() {
+            this.swiperOne = new Swiper('.addr-hot-body .swiper-container', {
+                slidesPerView: 4,
+                slidesPerColumn: 2,
+                spaceBetween: 30,
+                slidesPerColumnFill: 'row',
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 2000,
+                    stopOnLastSlide: false,
+                    disableOnInteraction: true,
+                    autoplayDisableOnInteraction: false
+                },
 
-    $(window).scroll(function () {
-        var h = $(document).scrollTop();
-        if (h > 720) {
-            $("header").addClass('banner-fixed')
-        } else {
-            $("header").removeClass('banner-fixed')
+            }),
+                this.swiperNum = new Swiper('.my-swiper-4 .swiper-container', {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                    slidesPerColumn: 1,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    autoplay: {
+                        delay: 2000,
+                        stopOnLastSlide: false,
+                        disableOnInteraction: true,
+                        autoplayDisableOnInteraction: false
+                    },
+                }),
+
+                window.addEventListener('scroll', this.getScrolltopNum)
+
         }
 
 
-    });
+    })
 
 
 </script>

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/city.css">
     <link rel="stylesheet" href="./css/foot.css">
     <link rel="stylesheet" href="./lib/element-ui/lib/theme-chalk/index.css">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
 
 </head>
 <body>
@@ -267,6 +268,27 @@
             </ul>
         </div>
     </header>
+    <div class="city-banner-fixed" v-show="cityTag">
+        <div class="city-banner-fixed-t" >
+            <div class="city-layout">
+                <h1>台北</h1>
+            </div>
+        </div>
+        <div class="city-banner-fixed-b">
+            <div class="city-layout">
+                <ul>
+                    <li><a href="#" class="active">台北首页</a></li>
+                    <li><a href="#">景点门票 & 表演</a></li>
+                    <li><a href="#">一日游 & 小团游</a></li>
+                    <li><a href="#">特色活动 & 体验</a></li>
+                    <li><a href="#">当地交通 & 旅行服务</a></li>
+                    <li><a href="#">台湾火车票</a></li>
+                    <li><a href="#">WiFi＆SIM卡</a></li>
+                    <li><a href="#">地道美食</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <!--城市背景图-->
     <div class="city-banner">
         <div class="city-banner-addr">
@@ -828,8 +850,19 @@
 
                         </div>
                     </li>
-                    <li class="city-local-item"></li>
-                    <li class="city-local-item"></li>
+                    <li class="city-local-item">
+                        <div class="city-local-item-date">
+                            <el-date-picker
+                                    v-model="value1"
+                                    type="date"
+                                    placeholder="可预订日期">
+                            </el-date-picker>
+                        </div>
+                        <div class="city-local-item-price">
+                            所有价格
+                        </div>
+                    </li>
+                    <li class="city-local-item">333</li>
                 </ul>
                 <div class="city-local-body">
                     <div class="city-local-body-item" v-for="item in categorylist" :key="item.id">
@@ -882,7 +915,7 @@
                             满足饕客们的味蕾，其中不容错过的经典美味有珍珠奶茶、臭豆腐和牛肉面。</p>
                         <p>谈到这座城市的代表建筑，台北101你绝对不能错过，它是世界上最高的建筑之一，登上91楼可以饱览整个城市美景。</p>
                     </div>
-                    <div class="city-tips-map"></div>
+                    <div class="city-tips-map" id="dituContent"></div>
                 </div>
                 <div class="city-local-weather">
                     <h4>当地天气</h4>
@@ -900,13 +933,47 @@
 
                 <div class="city-local-info">
                     <h2>实用信息</h2>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                    <ul class="city-info-ul">
+                        <li>
+                            <p>时区</p>
+                            <span>GMT +08:00</span>
+                            <p>没有时差</p>
+                        </li>
+                        <li>
+                            <p>时区</p>
+                            <span>GMT +08:00</span>
+                            <p>没有时差</p>
+                        </li>
+                        <li>
+                            <p>时区</p>
+                            <span>GMT +08:00</span>
+                            <p>没有时差</p>
+                            <span>GMT +08:00</span>
+                        </li>
                     </ul>
                 </div>
 
+            </div>
+
+            <!--                附近目的地-->
+            <div class="city-address">
+                <h2>附近目的地</h2>
+                <div class="city-address-items">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" v-for="item in cityAddress" :key="item.id">
+                                <a href="#">
+                                    <h4>台湾高铁</h4>
+                                    <p>距离台北1 km</p>
+                                </a>
+                            </div>
+
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -914,7 +981,7 @@
     </div>
 
 
-<!--    footer-->
+    <!--    footer-->
     <footer>
         <div class="lk-layout">
             <div class="foot-a">
@@ -993,33 +1060,7 @@
 <script src="./js/vue.min.js"></script>
 <script src="./lib/element-ui/lib/index.js"></script>
 <script>
-    var swiper = new Swiper('.city-search .swiper-container', {
-        slidesPerView: 7,
-        spaceBetween: 4,
-        freeMode: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });
-    new Swiper('.city-hot1 .swiper-container', {
-        slidesPerView: 4,
-        spaceBetween: 20,
-        slidesPerGroup: 3,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-    new Swiper('.city-exper .swiper-container', {
-        slidesPerView: 4,
-        spaceBetween: 20,
-        slidesPerGroup: 3,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
+
     new Vue({
         el: "#app",
         data: {
@@ -1044,13 +1085,56 @@
             currentPage1: 5,
             currentPage2: 5,
             currentPage3: 5,
+            cityTag: false,
             currentPage4: 4,
             cityWeather: [
                 {id: 1},
                 {id: 2},
                 {id: 3},
                 {id: 4}
-            ]
+            ],
+            cityAddress: [
+                {id: 1},
+                {id: 2},
+                {id: 3},
+                {id: 4},
+                {id: 5},
+                {id: 6},
+                {id: 7},
+                {id: 8},
+                {id: 9},
+                {id: 10},
+            ],
+            value1: '',
+            pickerOptions: {
+                disabledDate(time) {
+                    return time.getTime() > Date.now();
+                },
+                shortcuts: [{
+                    text: '今天',
+                    onClick(picker) {
+                        picker.$emit('pick', new Date());
+                    }
+                }, {
+                    text: '昨天',
+                    onClick(picker) {
+                        const date = new Date();
+                        date.setTime(date.getTime() - 3600 * 1000 * 24);
+                        picker.$emit('pick', date);
+                    }
+                }, {
+                    text: '一周前',
+                    onClick(picker) {
+                        const date = new Date();
+                        date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
+                        picker.$emit('pick', date);
+                    }
+                }]
+            },
+
+        },
+        created() {
+            this.initMap()
         },
         methods: {
             handleSizeChange(val) {
@@ -1058,8 +1142,90 @@
             },
             handleCurrentChange(val) {
                 console.log(`当前页: ${val}`);
+            },
+            //百度地图
+            initMap() {
+                this.createMap();//创建地图
+                this.setMapEvent();//设置地图事件
+                this.addMapControl();//向地图添加控件
+            },
+
+            createMap() {
+                var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+                var point = new BMap.Point(121.565401, 25.052845);//定义一个中心点坐标
+                map.centerAndZoom(point, 14);//设定地图的中心点和坐标并将地图显示在地图容器中
+                window.map = map;//将map变量存储在全局
+            },
+
+            setMapEvent() {
+                map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+                map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+                map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+                map.enableKeyboard();//启用键盘上下左右键移动地图
+            },
+            addMapControl() {
+                //向地图中添加缩放控件
+                var ctrl_nav = new BMap.NavigationControl({
+                    anchor: BMAP_ANCHOR_TOP_LEFT,
+                    type: BMAP_NAVIGATION_CONTROL_LARGE
+                });
+                map.addControl(ctrl_nav);
+                //向地图中添加缩略图控件
+                var ctrl_ove = new BMap.OverviewMapControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: 1});
+                map.addControl(ctrl_ove);
+                //向地图中添加比例尺控件
+                var ctrl_sca = new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT});
+                map.addControl(ctrl_sca);
+            },
+            getScrolltopNum() {
+                let top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset
+                if (top > 320) {
+                    this.cityTag = true;
+                } else {
+                    this.cityTag = false
+                }
             }
+
         },
+        mounted() {
+            var swiper = new Swiper('.city-search .swiper-container', {
+                slidesPerView: 7,
+                spaceBetween: 4,
+                freeMode: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+            new Swiper('.city-hot1 .swiper-container', {
+                slidesPerView: 4,
+                spaceBetween: 20,
+                slidesPerGroup: 1,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+            new Swiper('.city-exper .swiper-container', {
+                slidesPerView: 4,
+                spaceBetween: 20,
+                slidesPerGroup: 1,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+            new Swiper('.city-address-items .swiper-container', {
+                slidesPerView: 4,
+                spaceBetween: 20,
+                slidesPerGroup: 1,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            }),
+                window.addEventListener('scroll', this.getScrolltopNum)
+        }
     })
 
 

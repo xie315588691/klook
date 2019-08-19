@@ -1,19 +1,62 @@
 @charset "utf-8";
-
-.header-fixed {
+.city-banner-fixed {
+    width: 100%;
+    height: 154px;
     position: fixed;
-    top: 0;
+    top: 64px;
     left: 0;
+    background-color: red;
+    z-index: 18;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 3px 0 rgba(0, 0, 0, 0.08);
+}
+
+.city-banner-fixed-t {
+    width: 100%;
+    height: 106px;
+    box-sizing: border-box;
+    background-image: url('../images/taibei.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-top: 32px;
+}
+
+.city-banner-fixed-t h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 57px;
+}
+
+.city-banner-fixed-b {
     background-color: #fff;
-    color: #000
+    height: 48px;
+
 }
 
-.header-fixed .header-menu a {
-    color: #000;
+.city-banner-fixed-b ul {
+    display: flex;
 }
 
-.header-fixed .header-right li i {
-    color: #000;
+.city-banner-fixed-b li {
+    line-height: 48px;
+    height: 48px;
+    box-sizing: border-box;
+}
+
+.city-banner-fixed-b li a {
+    display: inline-block;
+    margin-right: 32px;
+    color: #333;
+    height: 48px;
+    box-sizing: border-box;
+}
+
+.city-banner-fixed-b li .active {
+    color: #ff5722;
+    font-weight: 700;
+    border-bottom: 2px solid #ff5722;
+
 }
 
 /*city-banner*/
@@ -414,6 +457,7 @@
     line-height: 50px;
     display: flex;
     justify-content: space-between;
+    z-index: 10;
 }
 
 .city-local .city-local-item:nth-of-type(1) span {
@@ -423,6 +467,7 @@
 
 .city-local .city-local-item:nth-of-type(2) {
     position: relative;
+    z-index: 11;
 }
 
 .city-local .city-local-item:nth-of-type(2) i {
@@ -450,6 +495,9 @@
 
 }
 
+.city-local-item-date {
+    width: 288px;
+}
 
 .city-local-category-t li {
     height: 130px;
@@ -745,6 +793,76 @@
     padding: 32px 0;
 }
 
+.city-info-ul {
+    display: flex;
 
+}
 
+.city-info-ul li {
+    width: 200px;
+    height: 134px;
+    margin-right: 82px;
+}
 
+.city-info-ul li p {
+    font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 12px;
+}
+
+.city-info-ul li span {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 16px;
+    margin-bottom: 12px;
+}
+
+.city-address {
+    width: 1160px;
+    height: 340px;
+}
+
+.city-address-items {
+    width: 100%;
+    height: 252px;
+    padding: 16px;
+}
+
+.city-address-items .swiper-slide {
+    height: 200px;
+}
+
+.city-address-items .swiper-slide a {
+    /*display: inline-block;*/
+    padding: 0 28px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-image: url("https://res.klook.com/image/upload/fl_lossy.progressive,q_85/c_fill,w_550,h_440/cities/ccf797d5-%E8%8A%B1%E8%8E%B2.webp");
+    background-repeat: no-repeat;
+    filter: grayscale(60%);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+
+}
+
+.city-address-items .swiper-slide h4 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.city-local-item .city-local-item-date, .city-local-item .city-local-item-price {
+    width: 50%;
+}
+
+.city-local-item-date .el-date-editor.el-input, .city-local-item-date .el-date-editor.el-input__inner {
+    width: 267px;
+}
+
+.city-local-item-price {
+    border-left: 1px solid #eee;
+}

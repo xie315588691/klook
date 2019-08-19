@@ -12,10 +12,39 @@
         input:focus {
             border: 2px solid yellow;
         }
+        .map{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+        }
     </style>
 </head>
 <body>
-<input type="text">
+<div id="app">
+    <div class="map"></div>
 
+    <input type="text">
+</div>
+<script src="./js/vue.min.js"></script>
+<script src="./js/axios.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        created() {
+            this.getIndex(),
+                this.getSession()
+        },
+        methods: {
+            async getIndex() {
+                const resu = await axios.post('http://starway.hzclouds.com/api/index/index', {default_currency: 'HKD'})
+                console.log(resu);
+            },
+            async getSession() {
+                const resut = await axios.post('http://39.100.224.49:3000/session', {username: 'admin', password: '1111'})
+                console.log(resut);
+            }
+        }
+    })
+</script>
 </body>
 </html>

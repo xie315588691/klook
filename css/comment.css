@@ -51,12 +51,14 @@ header {
     line-height: 32px;
     position: relative;
 }
+
 /*search*/
-.header-search{
+.header-search {
     position: relative;
-    display: none;
+    /*display: none;*/
 }
-.header-search input{
+
+.header-search input {
     width: 360px;
     height: 38px;
     background-color: #efefef;
@@ -65,7 +67,8 @@ header {
     padding-right: 38px;
     margin-top: 13px;
 }
-header .header-search i{
+
+header .header-search i {
     font-size: 22px;
     color: #999;
     position: absolute;
@@ -401,20 +404,23 @@ header .header-search i{
     left: 0;
     background-color: #fff;
     color: #000;
-    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12);
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12);
 }
 
 .banner-fixed .header-menu a {
     color: #000;
 }
-.banner-fixed .header-search{
+
+.banner-fixed .header-search {
     display: block;
 }
+
 /*city*/
-.city-layout{
+.city-layout {
     width: 1160px;
     margin: 0 auto;
 }
+
 /*产品下方的文字*/
 .active-body-b {
     width: 100%;
@@ -564,3 +570,20 @@ header .header-search i{
 }
 
 
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
+    z-index: 18;
+}
+
+.header-fixed .header-menu a {
+    color: #000;
+}
+
+.header-fixed .header-right li i {
+    color: #000;
+}
