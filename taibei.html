@@ -23,6 +23,10 @@
         <div class="header-logo">
             <a href="/">客路</a>
         </div>
+        <div class="header-search">
+            <input type="text" placeholder="搜索全球目的地 / 活动">
+            <i class="fa fa-search"></i>
+        </div>
         <div class="header-right">
             <ul class="header-menu">
                 <li>
@@ -269,11 +273,12 @@
         </div>
     </header>
     <div class="city-banner-fixed" v-show="cityTag">
-        <div class="city-banner-fixed-t" >
+        <div class="city-banner-fixed-t">
             <div class="city-layout">
                 <h1>台北</h1>
             </div>
         </div>
+
         <div class="city-banner-fixed-b">
             <div class="city-layout">
                 <ul>
@@ -1106,31 +1111,7 @@
                 {id: 10},
             ],
             value1: '',
-            pickerOptions: {
-                disabledDate(time) {
-                    return time.getTime() > Date.now();
-                },
-                shortcuts: [{
-                    text: '今天',
-                    onClick(picker) {
-                        picker.$emit('pick', new Date());
-                    }
-                }, {
-                    text: '昨天',
-                    onClick(picker) {
-                        const date = new Date();
-                        date.setTime(date.getTime() - 3600 * 1000 * 24);
-                        picker.$emit('pick', date);
-                    }
-                }, {
-                    text: '一周前',
-                    onClick(picker) {
-                        const date = new Date();
-                        date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
-                        picker.$emit('pick', date);
-                    }
-                }]
-            },
+
 
         },
         created() {
@@ -1181,8 +1162,12 @@
                 let top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset
                 if (top > 320) {
                     this.cityTag = true;
+                    const aa = document.querySelector('.city-main').style.marginTop = '120px'
+                    // console.log(aa);
+
                 } else {
                     this.cityTag = false
+                    document.querySelector('.city-main').style.marginTop = '0'
                 }
             }
 

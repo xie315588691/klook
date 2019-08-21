@@ -587,3 +587,9 @@ header .header-search i {
 .header-fixed .header-right li i {
     color: #000;
 }
+
+/*容器*/
+.layout-container {
+    width: 1160px;
+    margin: 0 auto;
+}

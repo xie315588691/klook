@@ -59,6 +59,13 @@
 
 }
 
+.city-banner-fixed-b li a:hover {
+    color: #ff5722;
+    font-weight: 700;
+    border-bottom: 2px solid #ff5722;
+}
+
+
 /*city-banner*/
 .city-banner {
     width: 100%;
