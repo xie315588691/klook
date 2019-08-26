@@ -873,3 +873,181 @@
 .city-local-item-price {
     border-left: 1px solid #eee;
 }
+
+/*scenic*/
+.city-scenic h2 {
+    padding-bottom: 9px;
+
+}
+
+.city-scenic-main {
+    border-top: 1px solid #999;
+    display: flex;
+}
+
+.scenic-left {
+    width: 259px;
+    box-sizing: border-box;
+    padding: 24px 0;
+}
+
+.scenic-left h3 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    padding: 0 0 19px;
+
+}
+
+.active .scenic-left-body {
+    position: fixed;
+    top: 242px;
+}
+
+.scenic-left-body {
+    width: 259px;
+    height: 340px;
+
+}
+
+
+.scenic-right {
+    width: 901px;
+    border-left: 1px solid #999;
+    box-sizing: border-box;
+    padding: 24px 0 60px 36px;
+}
+
+.scenic-right h3 {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.scenic-right-search {
+    position: relative;
+}
+
+.scenic-right-search input {
+    width: 285px;
+    height: 32px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 0 39px 0 12px;
+}
+
+.scenic-right-search i {
+    font-size: 18px;
+    position: absolute;
+    top: 8px;
+    left: 261px;
+    cursor: pointer;
+}
+
+
+.scenic-right-body {
+    margin-top: 30px;
+}
+
+/**/
+.scenic-right-body .add-active-body:hover {
+    transform: translateY(-5px);
+    transition: all 0.5s;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 -1px 3px 0 rgba(0, 0, 0, 0.08);
+}
+
+.scenic-right-body > ul {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.scenic-right-body > ul > li {
+    width: 274px;
+    height: 299px;
+    /*background-color: #ccc;*/
+    margin: 0 21px 30px 0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 -1px 3px 0 rgba(0, 0, 0, 0.08);
+}
+
+.scenic-right-body > ul > li:nth-of-type(3n) {
+    margin-right: 0;
+}
+
+.scenic-right-body .active-body-b h3 {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 0;
+    color: #333;
+}
+
+.active-body-b .old-price {
+    text-decoration: line-through;
+}
+
+.scenic-right-pagination {
+    text-align: center;
+}
+
+.scenic-youji h3 {
+    font-size: 24px;
+    line-height: 24px;
+    margin: 70px 0 23px;
+}
+
+.scenic-youji-items {
+    height: 320px;
+}
+
+.scenic-youji-items .swiper-slide {
+    height: 282px;
+    /*background-color: #ccc;*/
+}
+
+.scenic-youji-items .swiper-container {
+    padding: 20px 0;
+}
+
+/**/
+.youji-item a {
+    color: #333;
+}
+
+.youji-item:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.12), 0 -1px 2px 0 rgba(0, 0, 0, 0.08);
+}
+
+.youji-top {
+    width: 100%;
+    height: 154px;
+    background-image: url('../images/yoji-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.youji-bottom {
+    width: 100%;
+    height: 126px;
+    box-sizing: border-box;
+    padding: 12px;
+    border-bottom: 1px solid #efefef;
+    border-right: 1px solid #efefef;
+    border-left: 1px solid #efefef;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.youji-bottom p {
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.el-tree-node__label {
+    margin-left: 10px;
+}
+
+

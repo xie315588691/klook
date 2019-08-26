@@ -192,7 +192,7 @@ header .header-search i {
 
 .head-moneys {
     width: 740px;
-    height: 475px;
+    height: 148px;
     background-color: #fff;
     position: absolute;
     top: 64px;
@@ -214,7 +214,6 @@ header .header-search i {
     box-sizing: border-box;
     margin-top: 10px;
     border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
     padding: 27px 0 17px;
 }
 
@@ -463,6 +462,10 @@ header .header-search i {
     color: #f5a263;
 }
 
+.old-price {
+    text-decoration: line-through;
+}
+
 /**/
 .them-body-descr h3 {
     font-size: 16px;
@@ -592,4 +595,52 @@ header .header-search i {
 .layout-container {
     width: 1160px;
     margin: 0 auto;
+}
+
+/*优选主题*/
+
+.add-active-body .active-img {
+    width: 100%;
+    height: 154px;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../images/active-01.jpg);
+    box-sizing: border-box;
+    padding: 8px 12px;
+}
+
+.theme-body-img {
+    width: 373px;
+    height: 215px;
+    box-sizing: border-box;
+    background-image: url("../images/hot-2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.theme-body-img span {
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    position: absolute;
+    bottom: 8px;
+    left: 12px;
+    background-color: #ff5722;
+    padding: 0 8px;
+    border-radius: 5px;
+}
+
+.them-body-descr {
+    box-sizing: border-box;
+    padding: 8px 12px 12px;
+}
+
+.them-body-descr h3 {
+    font-size: 16px;
+    line-height: 19px;
+    width: 286px;
 }

@@ -162,55 +162,13 @@
                     <div class="head-moneys">
                         <div class="moneys-t">
                             <ul class="money-items">
-                                <li><a href="#"><span class="gray">CNY</span>人民币</a></li>
-                                <li><a href="#"><span class="gray">HKD</span> 港币</a></li>
-                                <li><a href="#"><span class="gray">MYR</span> 林吉特</a></li>
-                                <li><a href="#"><span class="gray">TWD</span> 台币</a></li>
-                                <li><a href="#"><span class="gray">SGD</span> 新币</a></li>
-                                <li><a href="#"><span class="gray">USD</span> 美元</a></li>
-                                <li><a href="#"><span class="gray">KRW</span> 韩元</a></li>
+                                <li v-for="item in currencyList"><a href="#"><span
+                                        class="gray">{{ item.option_code}}</span>{{item.option_name}}</a>
+                                </li>
                             </ul>
                             <span>推荐使用货币</span>
                         </div>
-                        <div class="moneys-b">
-                            <ul class="money-items">
-                                <li><a href="#"><span class="gray">AED</span> 阿联酋迪拉姆</a></li>
-                                <li><a href="#"><span class="gray">AUD</span> 澳元</a></li>
-                                <li><a href="#"><span class="gray">CAD</span> 加拿大元</a></li>
-                                <li><a href="#"><span class="gray">CHF</span> 瑞士法郎</a></li>
-                                <li><a href="#"><span class="gray">DKK</span> 丹麦克朗</a></li>
-                                <li><a href="#"><span class="gray">EGP</span> 埃及镑</a></li>
-                                <li><a href="#"><span class="gray">EUR</span> 欧元</a></li>
-                                <li><a href="#"><span class="gray">FJD</span> 斐济元</a></li>
-                                <li><a href="#"><span class="gray">GBP</span> 英镑</a></li>
-                                <li><a href="#"><span class="gray">IDR</span> 印尼盾</a></li>
-                                <li><a href="#"><span class="gray">INR</span> 印度卢比</a></li>
-                                <li><a href="#"><span class="gray">ISK</span> 冰岛克朗</a></li>
-                                <li><a href="#"><span class="gray">JOD</span> 约旦第纳尔</a></li>
-                                <li><a href="#"><span class="gray">JPY</span> 日元</a></li>
-                                <li><a href="#"><span class="gray">KHR</span> 瑞尔</a></li>
-                                <li><a href="#"><span class="gray">LAK</span> 老挝基普</a></li>
-                                <li><a href="#"><span class="gray">LBP</span> 黎巴嫩镑</a></li>
-                                <li><a href="#"><span class="gray">MAD</span> 摩洛哥迪拉姆</a></li>
-                                <li><a href="#" class="moneys-b-t"><span class="gray">MGA</span> 马达加斯加阿里亚里</a></li>
-                                <li><a href="#"><span class="gray">MMK</span> 缅元</a></li>
-                                <li><a href="#"><span class="gray">MOP</span> 澳门元</a></li>
-                                <li><a href="#"><span class="gray">MUR</span> 毛里求斯卢比</a></li>
-                                <li><a href="#"><span class="gray">MXN</span> 墨西哥比索</a></li>
-                                <li><a href="#"><span class="gray">NOK</span> 挪威克朗</a></li>
-                                <li><a href="#"><span class="gray">NZD</span> 新西兰元</a></li>
-                                <li><a href="#"><span class="gray">OMR</span> 阿曼里亚尔</a></li>
-                                <li><a href="#"><span class="gray">PHP</span> 菲律宾比索</a></li>
-                                <li><a href="#"><span class="gray">QAR</span> 卡塔尔里亚尔</a></li>
-                                <li><a href="#"><span class="gray">RUB</span> 俄罗斯卢布</a></li>
-                                <li><a href="#"><span class="gray">SEK</span> 瑞典克朗</a></li>
-                                <li><a href="#"><span class="gray">THB</span> 泰铢</a></li>
-                                <li><a href="#"><span class="gray">TRY</span> 新土耳其里拉</a></li>
-                                <li><a href="#"><span class="gray">VND</span> 越南盾</a></li>
-                                <li><a href="#"><span class="gray">ZAR</span> 南非兰特</a></li>
-                            </ul>
-                            <span>其他货币</span>
-                        </div>
+
 
                     </div>
                 </li>
@@ -274,14 +232,13 @@
     </header>
     <!--轮播图部分-->
     <div class="banner">
-        <ul class="banner">
-            <li style="background-image: url('./images/banner1.jpg')"></li>
-            <li style="background-image: url('./images/banner2.jpg');"></li>
-            <li style="background-image: url('./images/banner3.jpg');"></li>
-            <li style="background-image: url('./images/banner4.jpg');"></li>
+        <ul class="bannerUl">
+            <li :style="{'background-image': 'url('+item.img+')'}" v-for="(item,index) in bannerImgs"
+                :key="item.option_code" v-show=" index==bannerIndex">
+            </li>
         </ul>
         <div class="banner-container">
-            <h1>探索未知的你</h1>
+            <h1>探索未知的你}</h1>
             <h2>发现更好玩的世界，预订独一无二的旅行体验</h2>
             <div class="banner-search">
                 <div class="banner-search-top">
@@ -343,8 +300,7 @@
                                     href="#">台北</a>
                             </div>
                         </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
+
                     </div>
                     <a href="#" class="addr-hot-all"><i class="fa fa-map-marker"></i> 探索全部目的地</a>
                 </div>
@@ -360,7 +316,7 @@
                     <div class="my-swiper-4">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" @mouseenter="getMouseEnterTwo" @mouseleave="getMouseLeaveTwo">
                                     <a href="#">
                                         <div class="active-img">
                                             <i class="fa fa-map-marker"></i>
@@ -629,13 +585,24 @@
                 </div>
 
                 <div class="add-active-body">
-                    <div class="my-swiper-4">
+                    <div class="my-swiper-5">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
-                                <div @mouseenter="getMouseEnterTwo" @mouseleave="getMouseLeaveTwo"
-
-                                     v-for="item in hotActiveList" :key="item.id" class="swiper-slide">
-
+                                <div v-for="item in hotActiveList" :key="item.id" class="swiper-slide">
+                                    <a href="#">
+                                        <div class="active-img">
+                                            <i class="fa fa-map-marker"></i>
+                                            JR 列车
+                                        </div>
+                                        <div class="active-body-b">
+                                            <h3>JR PASS 全日本铁路通票（7 / 14 / 21日）</h3>
+                                            <p><span>★  4.8 &nbsp;&nbsp;</span>(6,978条评价) | 142K 人参加过</p>
+                                            <div>
+                                                <p class="active-money">￥ 1,838 <i class="fa fa-flash"></i></p>
+                                                <p class="active-time">最早可预订日期：2019年8月13日</p>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
 
                             </div>
@@ -654,8 +621,9 @@
             <h1>初次来 Klook？</h1>
             <h2>与Klook一起，开启新旅程，探索世界的更多可能</h2>
             <p>
-            <span>
-                <i class="fa fa-caret-right"></i>
+            <span @click=" indexRideo = 'true'">
+                <i class="fa fa-play"></i>
+
             </span>
 
             </p>
@@ -756,7 +724,12 @@
             </div>
         </div>
     </div>
-
+    <!--    视频-->
+    <div class="index-video" v-show="indexRideo">
+        <video id="video" class="g_v_c_mid" autoplay
+               src="https://res.klook.com/video/upload/v1558002258/Homepage/CN4_m.mov"></video>
+        <i class="fa fa-close" @click="indexRideo = !indexRideo"></i>
+    </div>
     <footer>
         <div class="lk-layout">
             <div class="foot-a">
@@ -831,7 +804,6 @@
     </footer>
 </div>
 
-<script src="./js/index.js"></script>
 <script src="./js/vue.min.js"></script>
 <script src="./js/axios.min.js"></script>
 <script src="./lib/swiper/js/swiper.min.js"></script>
@@ -840,10 +812,13 @@
     new Vue({
         el: "#app",
         data: {
+            bannerIndex: 0,
+            indexRideo: false,
             bodyContainner: null,
             scrollTag: false,
             swiperOne: null,
-            swiperNum: null,
+            swiperTwo: null,
+            swiperTwo: null,
             hotAddr: [
                 {id: 1},
                 {id: 2},
@@ -871,12 +846,29 @@
                 {id: 6},
                 {id: 7},
                 {id: 8}
-            ]
+            ],
+            recommentList: [],
+            bannerImgs: [],
+            currencyList: []
         },
         methods: {
             async getIndex() {
-                const resu = await axios.post('http://starway.hzclouds.com/api/index/index', {default_currency: 'HKD'})
-                console.log(resu);
+                const resu = await axios.get('http://starway.hzclouds.com/api/index/index')
+                if (resu.data.code == 200) {
+                    this.bannerImgs = resu.data.data.banner_img
+                    this.currencyList = resu.data.data.currency_list
+                }
+                console.log(resu.data.data);
+            },
+            //轮播图方法
+            getBannerIndex() {
+                _this = this
+                setInterval(() => {
+                    _this.bannerIndex++
+                    if (_this.bannerIndex > _this.bannerImgs.length - 1) {
+                        _this.bannerIndex = 0;
+                    }
+                }, 3000)
             },
             getMouseEnter() {
                 this.swiperOne.autoplay.stop()
@@ -884,16 +876,16 @@
             },
             getMouseLeave() {
                 this.swiperOne.autoplay.start()
-
             },
             getMouseEnterTwo() {
-                this.swiperNum.autoplay.stop()
+                this.swiperTwo.autoplay.stop()
 
             },
             getMouseLeaveTwo() {
-                this.swiperNum.autoplay.start()
+                this.swiperTwo.autoplay.start()
 
             },
+
             getScrolltopNum() {
                 let top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset
                 if (top > 700) {
@@ -906,6 +898,7 @@
         },
         created() {
             this.getIndex()
+            this.getBannerIndex()
         },
 
         mounted() {
@@ -919,8 +912,8 @@
                     clickable: true,
                 },
                 navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    nextEl: '.addr-hot-body .swiper-button-next',
+                    prevEl: '.addr-hot-body .swiper-button-prev',
                 },
                 autoplay: {
                     delay: 2000,
@@ -929,28 +922,48 @@
                     autoplayDisableOnInteraction: false
                 },
 
-            }),
-                this.swiperNum = new Swiper('.my-swiper-4 .swiper-container', {
-                    slidesPerView: 4,
-                    spaceBetween: 30,
-                    slidesPerColumn: 1,
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                    },
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    },
-                    autoplay: {
-                        delay: 2000,
-                        stopOnLastSlide: false,
-                        disableOnInteraction: true,
-                        autoplayDisableOnInteraction: false
-                    },
-                }),
+            });
 
-                window.addEventListener('scroll', this.getScrolltopNum)
+            this.swiperTwo = new Swiper('.my-swiper-4 .swiper-container', {
+                slidesPerView: 4,
+                spaceBetween: 30,
+                slidesPerColumn: 1,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.my-swiper-4 .swiper-button-next',
+                    prevEl: '.my-swiper-4 .swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 2000,
+                    stopOnLastSlide: false,
+                    disableOnInteraction: true,
+                    autoplayDisableOnInteraction: false
+                },
+            });
+            new Swiper('.my-swiper-5 .swiper-container', {
+                slidesPerView: 4,
+                spaceBetween: 30,
+                slidesPerColumn: 1,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.my-swiper-5 .swiper-button-next',
+                    prevEl: '.my-swiper-5 .swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 2000,
+                    stopOnLastSlide: false,
+                    disableOnInteraction: true,
+                    autoplayDisableOnInteraction: false
+                },
+            });
+
+            window.addEventListener('scroll', this.getScrolltopNum);
 
         }
 

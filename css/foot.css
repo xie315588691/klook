@@ -2,6 +2,10 @@
 footer {
     background-color: #333;
 }
+.lk-layout{
+    width: 1160px;
+    margin: 0 auto;
+}
 
 .foot-a {
     height: 100px;
